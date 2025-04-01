@@ -18,8 +18,6 @@ import usaFlag from '@/app/img/others/usa.png'
 import Image from "next/image";
 import Link from "next/link";
 
-// import { montserrat } from "@/app/fonts/fonts";
-
 import {
     Select,
     SelectContent,
@@ -137,7 +135,7 @@ const tabsDesktopView = ({
                                 {spanish ? 'Español' : 'Spanish'}
                                 <Image
                                     src={argFlag}
-                                    alt="Argentina Flag"
+                                    alt="Argentine Flag"
                                     width={20}
                                 />
                             </div>
