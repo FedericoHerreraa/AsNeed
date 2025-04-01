@@ -24,7 +24,7 @@ export const OurWay = () => {
 
   return (
     <div
-      className={`${nightMode ? "bg-black" : ""} md:min-h-[100vh] min-h-[70vh]`}
+      className={`${nightMode ? "bg-[url('/img/bg-black.jpg')]" : "bg-[url('/img/bg-white.jpg')]"} md:min-h-[100vh] min-h-[70vh] w-full bg-cover bg-center `}
     >
       <TitleSection
         firstTitleEnglish="Our Way Of "
@@ -84,8 +84,8 @@ export const OurWay = () => {
           </div>
         </section>
 
-        <section className="mt-20">
-          <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
+        <section className="mt-20 md:px-10 px-4">
+          <div className="flex items-center gap-5 md:w-[40%] w-full mx-auto text-center">
             <p
               className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
                 nightMode ? "text-zinc-300" : "text-zinc-700"
