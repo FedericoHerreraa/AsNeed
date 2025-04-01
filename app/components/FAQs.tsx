@@ -54,8 +54,8 @@ export const FAQs = () => {
 const info = [
     {
         id: 1,
-        questionSpanish: "¿Cuándo tengo que abonar la página?",
-        questionEnglish: "When do I have to pay for the website?",
+        questionSpanish: "¿Cuándo tengo que abonar mi proyecto?",
+        questionEnglish: "When do I have to pay for the project?",
         answerSpanish: "El pago se realiza en dos partes: el 50% al inicio del proyecto y el 50% al finalizarlo.",
         answerEnglish: "The payment is made in two parts: 50% at the beginning of the project and 50% upon completion."
     },
@@ -75,15 +75,15 @@ const info = [
     },
     {
         id: 4,
-        questionSpanish: "¿Se puede mejorar la web que ya tengo hecha?",
-        questionEnglish: "Can you improve the website I already have?",
-        answerSpanish: "Sí, podemos mejorar una web existente. El costo se definirá según los cambios necesarios.",
-        answerEnglish: "Yes, we can improve an existing website. The cost will be determined based on the required changes."
+        questionSpanish: "¿Se puede mejorar una aplicación que ya tengo hecha?",
+        questionEnglish: "Can you improve an application that I already have?",
+        answerSpanish: "Sí, podemos mejorar una aplicación existente. El costo se definirá según los cambios necesarios.",
+        answerEnglish: "Yes, we can improve an existing application. The cost will be determined based on the required changes."
     },
     {
         id: 5,
-        questionSpanish: "¿Tengo que tener el diseño de mi web previamente creado?",
-        questionEnglish: "Do I need to have my website design ready beforehand?",
+        questionSpanish: "¿Tengo que tener el diseño de mi aplicación previamente creado?",
+        questionEnglish: "Do I need to have my application design ready beforehand?",
         answerSpanish: "No es necesario. Podemos crear el diseño según tus necesidades y objetivos.",
         answerEnglish: "It is not necessary. We can create the design based on your needs and goals."
     },
