@@ -4,6 +4,9 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { BsArrowReturnRight } from "react-icons/bs";
+import { FaRegLightbulb } from "react-icons/fa";
+import { FaCircleUser } from "react-icons/fa6";
+import { BiSupport } from "react-icons/bi";
 
 import {
   AlertDialog,
@@ -35,37 +38,39 @@ export const OurWay = () => {
         nightMode={nightMode}
       />
 
-      <div className="mt-20">
+      <div className="mt-20 md:px-10 px-4">
         <section>
-          <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
+          <div className="flex items-center gap-5 md:w-[40%] w-full mx-auto text-center">
             <p
               className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
-                nightMode ? "text-zinc-300" : "text-zinc-600"
+                nightMode ? "text-zinc-300" : "text-zinc-700"
               } md:text-2xl text-xl`}
             >
               1
             </p>
-            <h2
-              className={`${
-                nightMode ? "text-zinc-300" : "text-zinc-600"
-              } md:text-3xl text-xl font-semibold`}
-            >
-              {spanish
-                ? "Desarrollo Móvil y Web."
-                : "Mobile and Web Development."}
-            </h2>
+            <div className="flex items-center gap-3 md:justify-center">
+              <h2
+                className={`${
+                  nightMode ? "text-zinc-300" : "text-zinc-700"
+                } md:text-3xl text-xl font-semibold`}
+              >
+                {spanish
+                  ? "Desarrollo Móvil y Web."
+                  : "Mobile and Web Development."}
+              </h2>
+            </div>
           </div>
-          <div className="flex flex-col gap-10 mt-10 items-center text-white">
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-10 mt-10 text-white">
             {arrowsInfo.map((arrow, index) => (
               <div
                 key={index}
-                className="flex gap-5 md:w-[35%] w-[80%] mx-auto"
+                className="flex gap-5 md:w-[30%] w-[80%] mx-auto items-center"
               >
-                <BsArrowReturnRight size={30} color="gray" />
-                <div className="flex flex-col items-start ">
+                <arrow.icon size={50} color="gray" />
+                <div className="flex flex-col items-start">
                   <h1
                     className={`md:text-xl font-semibold ${
-                      nightMode ? "text-zinc-300" : "text-zinc-600"
+                      nightMode ? "text-zinc-300" : "text-zinc-700"
                     }`}
                   >
                     {spanish ? arrow.titleSpanish : arrow.titleEnglish}
@@ -83,14 +88,14 @@ export const OurWay = () => {
           <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
             <p
               className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
-                nightMode ? "text-zinc-300" : "text-zinc-600"
+                nightMode ? "text-zinc-300" : "text-zinc-700"
               } md:text-2xl text-xl`}
             >
               2
             </p>
             <h2
               className={`${
-                nightMode ? "text-zinc-300" : "text-zinc-600"
+                nightMode ? "text-zinc-300" : "text-zinc-700"
               } md:text-3xl text-xl font-semibold`}
             >
               {spanish ? "Redes Sociales." : "Social Media."}
@@ -102,7 +107,7 @@ export const OurWay = () => {
               <div className="flex flex-col items-start">
                 <h1
                   className={`md:text-xl font-semibold ${
-                    nightMode ? "text-zinc-300" : "text-zinc-600"
+                    nightMode ? "text-zinc-300" : "text-zinc-700"
                   }`}
                 >
                   {spanish ? "Servicio Terciarizado." : "Outsourced Service."}
@@ -156,6 +161,7 @@ export const OurWay = () => {
 
 const arrowsInfo = [
   {
+    icon: FaRegLightbulb,
     titleSpanish: "Soluciones innovadoras.",
     titleEnglish: "Innovative Solutions.",
     spanish:
@@ -164,6 +170,7 @@ const arrowsInfo = [
       "We develop modern applications and websites tailored to your needs and goals.",
   },
   {
+    icon: FaCircleUser,
     titleSpanish: "Experiencia de usuario.",
     titleEnglish: "User Experience.",
     spanish:
@@ -172,6 +179,7 @@ const arrowsInfo = [
       "We optimize user experience with intuitive and functional designs, ensuring satisfaction.",
   },
   {
+    icon: BiSupport,
     titleSpanish: "Soporte continuo.",
     titleEnglish: "Continuous Support.",
     spanish:
