@@ -4,6 +4,7 @@ import { LineSeparator } from "@/app/components/LineSeparator";
 import { UsersOpinions } from "@/app/components/UsersOpinions";
 import { CustomSeparator } from "@/app/components/CustomSeparator";
 import { FAQs } from "@/app/components/FAQs";
+import { Header } from "@/app/components/Header";
 
 export const metadata: Metadata = {
     title: "Our Best Projects | AsNeed",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function OurWorkPage() {
     return (
         <>
+            <Header bgDark="bg-black" bgLight="bg-white"/>
             <OurWork/>
             <CustomSeparator />
             <UsersOpinions />

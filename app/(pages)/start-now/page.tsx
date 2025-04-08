@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { StartNow } from "@/app/components/StartNow";
 import { LineSeparator } from "@/app/components/LineSeparator";
 import { FAQs } from "@/app/components/FAQs";
+import {Header} from "@/app/components/Header"
 
 export const metadata: Metadata = {
     title: "Schedule a Call | AsNeed",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function StartNowPage() {
     return (
         <>
+            <Header bgDark="bg-black" bgLight="bg-white"/>
             <StartNow />
             <LineSeparator />
             <FAQs />

@@ -46,14 +46,14 @@ interface TabProps {
 }
 
 
-export const Header = () => {
+export const Header = ({bgDark, bgLight} : {bgDark: string, bgLight: string}) => {
     const { nightMode, setNightMode } = useNightMode()
     const { spanish, setSpanish } = useLenguage()
     const { isMobile } = useMobileView()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     return (
-        <header className={` ${nightMode ? 'text-zinc-300 bg-black' : ''} `}>
+        <header className={` ${nightMode ? `text-zinc-300 ${bgDark}` : `${bgLight}`} `}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-8 ">
                 <Link href='/' className="flex items-center gap-1">
                     <Image 
