@@ -40,7 +40,7 @@ export const LandingInfo = () => {
                 src={imgLanding}
                 alt="Landing Image"
                 fill
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-auto"
                 priority
             />
 
