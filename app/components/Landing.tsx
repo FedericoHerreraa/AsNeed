@@ -13,12 +13,10 @@ import { FaHandshake } from 'react-icons/fa';
 import imgLanding from "@/public/img/background.png"
 import { useNightMode } from '@/app/context/NightModeContext'
 import { useLenguage } from '@/app/context/LenguageContext';
-// import { useMobileView } from "@/app/context/MobileViewContext";
 
 export const LandingInfo = () => {
     const { nightMode } = useNightMode();
     const { spanish } = useLenguage()
-    // const { isMobile } = useMobileView()
 
     const typedRef = useRef(null);
 
@@ -35,7 +33,7 @@ export const LandingInfo = () => {
     }, [spanish]);
 
     return (
-        <div className="relative min-h-[100dvh] h-screen w-full isolate z-0">
+        <div className="relative min-h-[100vh] h-screen w-full isolate z-0 bg-[url('/')]">
             <Image
                 src={imgLanding}
                 alt="Landing Image"
