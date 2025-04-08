@@ -35,7 +35,7 @@ export const LandingInfo = () => {
     }, [spanish]);
 
     return (
-        <div className="relative h-screen w-full">
+        <div className="relative min-h-[100dvh] h-screen w-full isolate z-0">
             <Image
                 src={imgLanding}
                 alt="Landing Image"
@@ -83,18 +83,6 @@ export const LandingInfo = () => {
                         </div>
                     </Link>
                 </div>
-                
-                {/* {!isMobile && (
-                    <div className="w-1/2 hidden md:flex animate-float">
-                        <Image 
-                            src={imgLanding} 
-                            alt="Landing Image" 
-                            width={600} 
-                            height={500} 
-                            className="rounded-3xl"
-                        />
-                    </div>
-                )} */}
             </div>
         </div>
     )
