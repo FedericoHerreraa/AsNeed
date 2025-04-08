@@ -35,7 +35,7 @@ export const LandingInfo = () => {
     }, [spanish]);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden">
+        <div className="relative h-screen w-full">
             <Image
                 src={imgLanding}
                 alt="Landing Image"
