@@ -138,7 +138,7 @@ export async function POST(req: NextRequest) {
         // Email sent to us
         await resend.emails.send({
             from: 'contact@asneedsolutions.com',
-            to: 'asneeed@gmail.com',
+            to: 'asneedsolutions@gmail.com',
             subject: lenguage === 'en' ? 'New meeting arranged' : 'Nuevo cita reservada',
             html: emailUsMessage
         })
