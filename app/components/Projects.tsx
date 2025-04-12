@@ -5,12 +5,12 @@ import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
 import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
-import desktopNonnomingo from '@/app/img/projects/desktopNonnoMingo.png'
 import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
+import desktopRIE from '@/app/img/projects/desktopRIE.png'
 
-import newMobileBuffalo from '@/app/img/projects/mobileBuffalo.png'
-import newMobilePinasco from '@/app/img/projects/mobilePinasco.png'
-import newMobileNonnomingo from '@/app/img/projects/mobileNonnomingo.png'
+import mobileBuffalo from '@/app/img/projects/mobileBuffalo.png'
+import mobilePinasco from '@/app/img/projects/mobilePinasco.png'
+import mobileRIE from '@/app/img/projects/mobileRIE.png'
 
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -88,6 +88,18 @@ export const Projects = () => {
 const info = [
     {
         id: 1,
+        titleSpanish: 'Red Integral Educativa',
+        titleEnglish: 'Integral Educational Network',
+        descriptionSpanish: 'Desarrollo de una plataforma web institucional diseñada para escuelas, jardines y centros educativos de cualquier nivel. RIE permite a las instituciones contar con una imagen web profesional, sistema de asistencias automatizado, y un registro organizado de mensajes entre la comunidad educativa.',
+        descriptionEnglish: 'Development of an institutional web platform designed for schools, kindergartens, and educational centers of all levels. RIE provides institutions with a professional web presence, an automated attendance system, and an organized messaging log to enhance communication within the educational community.',
+        desafioSpanish: 'El desafío fue crear un sistema centralizado y escalable que permitiera a cada institución gestionar su identidad digital, mantener un control eficiente de asistencias, y facilitar la comunicación interna. También se trabajó en un panel administrativo dinámico y adaptable.',
+        desafioEnglish: 'The challenge was to create a centralized and scalable system that would allow each institution to manage its digital identity, efficiently track attendance, and facilitate internal communication. A dynamic and adaptable admin dashboard was also developed as part of the platform.',
+        desktop: desktopRIE,
+        mobile: mobileRIE,
+        url: 'https://www.somosrie.com'
+    },
+    {
+        id: 2,
         titleSpanish: 'E-commerce de venta de instrumentos musicales',
         titleEnglish: 'E-commerce for musical instruments',
         descriptionSpanish: 'Desarrollo de una tienda online para la venta de instrumentos musicales. El proyecto incluye una sección de productos, un carrito de compras, autentificacion, roles de usuario y compras.',
@@ -95,11 +107,11 @@ const info = [
         desafioSpanish: 'El desafío fue implementar una experiencia de compra completa, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito, realizar compras y gestionar sus pedidos. También se trabajó en la autentificación y roles de usuario para garantizar la seguridad de la información.',
         desafioEnglish: 'The challenge was to implement a complete shopping experience, ensuring that users could navigate through sections, add products to the cart, make purchases, and manage their orders. Authentication and user roles were also key focuses to ensure information security.',
         desktop: desktopBuffalo,
-        mobile: newMobileBuffalo,
+        mobile: mobileBuffalo,
         url: 'https://www.sbmusic.ar'
     },
     {
-        id: 2,
+        id: 3,
         titleSpanish: 'Consultorio Odontológico',
         titleEnglish: 'Dental Clinic Website',
         descriptionSpanish: 'Diseño de una página web para una clínica odontológica. El proyecto incluye un formulario de contacto, una galería de imágenes y una sección de servicios.',
@@ -107,19 +119,7 @@ const info = [
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
         desafioEnglish: 'The main challenge was to ensure that the design conveys trust and professionalism, while making patients feel comfortable browsing the site. Additionally, the focus was on highlighting the clinic\'s key services and providing a mobile-friendly experience.',
         desktop: desktopPinasco,
-        mobile: newMobilePinasco,
+        mobile: mobilePinasco,
         url: 'https://www.odontologiapinasco.com'
-    },
-    {
-        id: 3,
-        titleSpanish: 'Tienda de Pizza',
-        titleEnglish: 'Pizzeria Store',
-        descriptionSpanish: 'Desarrollo de una aplicación web de comercio electrónico para una pizzería. El proyecto incluye productos organizados por secciones, un carrito de compras interactivo, y un formulario de confirmación que permite enviar el pedido directamente por WhatsApp.',
-        descriptionEnglish: 'Development of an e-commerce web application for a pizzeria. The project includes products organized by sections, an interactive shopping cart, and a confirmation form that allows users to send their order directly via WhatsApp.',
-        desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',
-        desafioEnglish: 'The challenge was to implement a simple and intuitive shopping experience, ensuring that users could navigate through sections, add products to the cart, and easily send their orders. Integration with WhatsApp was also a key focus to streamline the confirmation process.',
-        desktop: desktopNonnomingo,
-        mobile: newMobileNonnomingo,
-        url: 'https://www.nonnomingo.com.ar'
-    },
+    }
 ];
