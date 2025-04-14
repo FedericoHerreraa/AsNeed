@@ -42,11 +42,11 @@ export const OurResults = () => {
         >
             <TitleSection
                 firstTitleEnglish="We Show"
-                secondTitleEnglish="Results."
+                secondTitleEnglish="Results"
                 firstTitleSpanish="Generamos"
-                secondTitleSpanish="Resultados."
-                subTitleEnglish="Let's find out what we can do."
-                subTitleSpanish="Enterate de lo que podemos hacer."
+                secondTitleSpanish="Resultados"
+                subTitleEnglish="Let's find out what we can do"
+                subTitleSpanish="Enterate de lo que podemos hacer"
                 color="from-yellow-600 to-red-900"
                 spanish={spanish}
                 nightMode={nightMode}

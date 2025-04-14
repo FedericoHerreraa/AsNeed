@@ -22,11 +22,11 @@ export const Founders = () => {
     <div className={`${nightMode ? "bg-black" : ""} min-h-[75vh]`}>
       <TitleSection
         firstTitleEnglish="Meet Our"
-        secondTitleEnglish="Founders."
+        secondTitleEnglish="Founders"
         firstTitleSpanish="Conocé a Nuestros "
-        secondTitleSpanish="Fundadores."
-        subTitleEnglish="Those who bring the magic to life."
-        subTitleSpanish="Los que llevan la magia adelante."
+        secondTitleSpanish="Fundadores"
+        subTitleEnglish="Those who bring the magic to life"
+        subTitleSpanish="Los que llevan la magia adelante"
         color="from-violet-400 to-violet-800"
         spanish={spanish}
         nightMode={nightMode}

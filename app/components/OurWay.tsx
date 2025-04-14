@@ -28,11 +28,11 @@ export const OurWay = () => {
     >
       <TitleSection
         firstTitleEnglish="Our Way Of "
-        secondTitleEnglish="Working."
+        secondTitleEnglish="Working"
         firstTitleSpanish="Nuestra Forma de "
-        secondTitleSpanish="Trabajar."
-        subTitleEnglish="First of all we will show you our philosophy."
-        subTitleSpanish="Primero que nada te mostramos nuestra filosofía."
+        secondTitleSpanish="Trabajar"
+        subTitleEnglish="First of all we will show you our philosophy"
+        subTitleSpanish="Primero que nada te mostramos nuestra filosofía"
         color="from-green-500 to-green-800"
         spanish={spanish}
         nightMode={nightMode}
@@ -55,8 +55,8 @@ export const OurWay = () => {
                 } md:text-3xl text-xl font-semibold`}
               >
                 {spanish
-                  ? "Desarrollo Móvil y Web."
-                  : "Mobile and Web Development."}
+                  ? "Desarrollo Móvil y Web"
+                  : "Mobile and Web Development"}
               </h2>
             </div>
           </div>
@@ -98,7 +98,7 @@ export const OurWay = () => {
                 nightMode ? "text-zinc-300" : "text-zinc-700"
               } md:text-3xl text-xl font-semibold`}
             >
-              {spanish ? "Redes Sociales." : "Social Media."}
+              {spanish ? "Redes Sociales" : "Social Media"}
             </h2>
           </div>
           <div className="flex flex-col gap-10 mt-10 items-center text-white">
@@ -162,8 +162,8 @@ export const OurWay = () => {
 const arrowsInfo = [
   {
     icon: FaRegLightbulb,
-    titleSpanish: "Soluciones innovadoras.",
-    titleEnglish: "Innovative Solutions.",
+    titleSpanish: "Soluciones innovadoras",
+    titleEnglish: "Innovative Solutions",
     spanish:
       "Desarrollamos aplicaciones y sitios web modernos, adaptados a tus necesidades y objetivos.",
     english:
@@ -171,8 +171,8 @@ const arrowsInfo = [
   },
   {
     icon: FaCircleUser,
-    titleSpanish: "Experiencia de usuario.",
-    titleEnglish: "User Experience.",
+    titleSpanish: "Experiencia de usuario",
+    titleEnglish: "User Experience",
     spanish:
       "Optimizamos la experiencia de usuario con diseños intuitivos y funcionales, garantizando satisfacción.",
     english:
@@ -180,8 +180,8 @@ const arrowsInfo = [
   },
   {
     icon: BiSupport,
-    titleSpanish: "Soporte continuo.",
-    titleEnglish: "Continuous Support.",
+    titleSpanish: "Soporte continuo",
+    titleEnglish: "Continuous Support",
     spanish:
       "Acompañamos a nuestros clientes con soporte técnico y actualizaciones para mantener sus proyectos al día.",
     english:

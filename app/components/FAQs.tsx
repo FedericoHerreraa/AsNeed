@@ -20,11 +20,11 @@ export const FAQs = () => {
         <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} pb-20`}>
             <TitleSection
                 firstTitleEnglish="Frequently Asked"
-                secondTitleEnglish="Questions."
+                secondTitleEnglish="Questions"
                 firstTitleSpanish="Preguntas"
-                secondTitleSpanish="Frecuentes."
-                subTitleEnglish="FAQs."
-                subTitleSpanish="FAQs."
+                secondTitleSpanish="Frecuentes"
+                subTitleEnglish="FAQs"
+                subTitleSpanish="FAQs"
                 color="from-blue-600 to-violet-700"
                 spanish={spanish}
                 nightMode={nightMode}

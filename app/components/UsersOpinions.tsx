@@ -33,11 +33,11 @@ export const UsersOpinions = () => {
         <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[60vh]`}>
             <TitleSection
                 firstTitleEnglish="What our users"
-                secondTitleEnglish="are saying."
+                secondTitleEnglish="are saying"
                 firstTitleSpanish="Que dicen"
-                secondTitleSpanish="nuestros clientes."
-                subTitleEnglish="Listen to the best clients."
-                subTitleSpanish="Escucha a los mejores clientes."
+                secondTitleSpanish="nuestros clientes"
+                subTitleEnglish="Listen to the best clients"
+                subTitleSpanish="Escucha a los mejores clientes"
                 color="from-orange-400 to-orange-800"
                 spanish={spanish}
                 nightMode={nightMode}

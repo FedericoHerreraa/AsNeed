@@ -21,11 +21,11 @@ export const TrustedByCompanies = () => {
         <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-white md:min-h-[60vh] min-h-[45vh]`}>
             <TitleSection
                 firstTitleEnglish="Trusted by the"
-                secondTitleEnglish="Best Clients."
+                secondTitleEnglish="Best Clients"
                 firstTitleSpanish="Acompañados por los"
-                secondTitleSpanish="Mejores Clientes."
-                subTitleEnglish="Our Partners."
-                subTitleSpanish="Nuestros Clientes."
+                secondTitleSpanish="Mejores Clientes"
+                subTitleEnglish="Our Partners"
+                subTitleSpanish="Nuestros Clientes"
                 color="from-blue-700 to-violet-700"
                 spanish={spanish}
                 nightMode={nightMode}
