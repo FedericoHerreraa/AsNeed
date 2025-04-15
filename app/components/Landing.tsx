@@ -51,7 +51,7 @@ export const LandingInfo = () => {
                 <Header bgDark="transparent" bgLight="transparent" />
             </div>
             <div className="relative z-20 w-[80%] mx-auto flex justify-between gap-10 h-full items-center">
-                <div className="flex flex-col md:gap-10 gap-16 md:w-1/2 md:items-start items-center">
+                <div className="flex flex-col md:gap-10 gap-7 md:w-1/2 md:items-start items-center">
                     <h1 className={nightMode ? 'md:text-6xl text-4xl md:text-left text-center font-semibold text-white' : 'md:text-6xl text-4xl md:text-left text-center font-semibold text-black'}>
                         {spanish ? 'Comenzá tu' : 'Start Your Own'}{' '}
                         <span className="bg-gradient-to-r from-blue-700 to-violet-700 bg-clip-text text-transparent">
