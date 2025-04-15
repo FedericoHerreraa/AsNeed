@@ -3,20 +3,9 @@
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
-import { BsArrowReturnRight } from "react-icons/bs";
-import { FaRegLightbulb } from "react-icons/fa";
-import { FaCircleUser } from "react-icons/fa6";
-import { BiSupport } from "react-icons/bi";
+import { MdOutlineCancel } from "react-icons/md";
+import { motion } from "framer-motion";
 
-import {
-  AlertDialog,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/app/components/ui/alert-dialog";
 
 export const OurWay = () => {
   const { nightMode } = useNightMode();
@@ -40,118 +29,48 @@ export const OurWay = () => {
 
       <div className="mt-20 md:px-10 px-4">
         <section>
-          <div className="flex items-center gap-5 md:w-[40%] w-full mx-auto text-center">
-            <p
-              className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
-                nightMode ? "text-zinc-300" : "text-zinc-700"
-              } md:text-2xl text-xl`}
-            >
-              1
-            </p>
-            <div className="flex items-center gap-3 md:justify-center">
-              <h2
-                className={`${
-                  nightMode ? "text-zinc-300" : "text-zinc-700"
-                } md:text-3xl text-xl font-semibold`}
-              >
-                {spanish
-                  ? "Desarrollo Móvil y Web"
-                  : "Mobile and Web Development"}
-              </h2>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-10 mt-10 text-white">
+          <div className="flex flex-col justify-center gap-10 text-white">
             {arrowsInfo.map((arrow, index) => (
               <div
                 key={index}
-                className="flex gap-5 md:w-[30%] w-[80%] mx-auto items-center"
+                className="flex gap-5 md:w-[35%] w-[80%] mx-auto items-center"
               >
-                <arrow.icon size={50} color="gray" />
                 <div className="flex flex-col items-start">
                   <h1
-                    className={`md:text-xl font-semibold ${
-                      nightMode ? "text-zinc-300" : "text-zinc-700"
-                    }`}
+                    className={`md:text-3xl font-semibold mb-3 ${nightMode ? "text-zinc-300" : "text-zinc-700"
+                      }`}
                   >
                     {spanish ? arrow.titleSpanish : arrow.titleEnglish}
                   </h1>
-                  <p className="md:text-lg text-sm text-zinc-500">
-                    {spanish ? arrow.spanish : arrow.english}
-                  </p>
+                  <motion.section
+                    initial={{ x: -60, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center gap-3 mb-3 ml-5">
+                      <MdOutlineCancel size={25} className="text-red-500 w-1/8" />
+                      <p className="md:text-base text-sm text-zinc-500 w-full">
+                        {spanish ? arrow.spanishCancel : arrow.englishCancel}
+                      </p>
+                    </div>
+                  </motion.section>
+
+                  <motion.section
+                    initial={{ x: 60, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center gap-3 ml-5">
+                      <p className={`md:text-lg text-sm bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-orange-400 to-violet-400' : 'from-orange-600 to-violet-600'} w-full`}>
+                        {spanish ? arrow.spanishOk : arrow.englishOk}
+                      </p>
+                    </div>
+                  </motion.section>
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        <section className="mt-20 md:px-10 px-4">
-          <div className="flex items-center gap-5 md:w-[40%] w-full mx-auto text-center">
-            <p
-              className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
-                nightMode ? "text-zinc-300" : "text-zinc-700"
-              } md:text-2xl text-xl`}
-            >
-              2
-            </p>
-            <h2
-              className={`${
-                nightMode ? "text-zinc-300" : "text-zinc-700"
-              } md:text-3xl text-xl font-semibold`}
-            >
-              {spanish ? "Redes Sociales" : "Social Media"}
-            </h2>
-          </div>
-          <div className="flex flex-col gap-10 mt-10 items-center text-white">
-            <div className="flex gap-5 md:w-[35%] w-[80%] mx-auto">
-              <BsArrowReturnRight size={22} color="gray" />
-              <div className="flex flex-col items-start">
-                <h1
-                  className={`md:text-xl font-semibold ${
-                    nightMode ? "text-zinc-300" : "text-zinc-700"
-                  }`}
-                >
-                  {spanish ? "Servicio Terciarizado." : "Outsourced Service."}
-                </h1>
-
-                <AlertDialog>
-                  <p className="md:text-lg text-sm text-zinc-500">
-                    {spanish ? "Haz clic " : "Click "}
-                    <AlertDialogTrigger>
-                      <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent md:text-xl cursor-pointer font-semibold">
-                        {spanish ? "aquí" : "here"}
-                      </span>
-                    </AlertDialogTrigger>
-                    {spanish
-                      ? " para navegar al sitio web indicado para redes sociales."
-                      : " to navigate to the designated social media website."}
-                  </p>
-                  <AlertDialogContent
-                    className={`${
-                      nightMode
-                        ? "bg-zinc-900 border-zinc-700"
-                        : "bg-zinc-300 border-zinc-500"
-                    } md:w-full w-[80%] rounded-lg`}
-                  >
-                    <AlertDialogHeader>
-                      <AlertDialogTitle
-                        className={` ${
-                          nightMode ? "text-zinc-200" : "text-zinc-800"
-                        }`}
-                      >
-                        {spanish
-                          ? "Proximamente! Estamos trabajando en ello."
-                          : "Soon! We are working on it."}
-                      </AlertDialogTitle>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                      <AlertDialogCancel className="w-fit md:mx-0 mx-auto">
-                        Ok
-                      </AlertDialogCancel>
-                    </AlertDialogFooter>
-                  </AlertDialogContent>
-                </AlertDialog>
-              </div>
-            </div>
           </div>
         </section>
       </div>
@@ -161,30 +80,27 @@ export const OurWay = () => {
 
 const arrowsInfo = [
   {
-    icon: FaRegLightbulb,
-    titleSpanish: "Soluciones innovadoras",
-    titleEnglish: "Innovative Solutions",
-    spanish:
-      "Desarrollamos aplicaciones y sitios web modernos, adaptados a tus necesidades y objetivos.",
-    english:
-      "We develop modern applications and websites tailored to your needs and goals.",
+    titleSpanish: "Desarrollo personalizado",
+    titleEnglish: "Custom Development",
+    spanishCancel: "No usamos plantillas prediseñadas. ",
+    spanishOk: "Diseñamos y desarrollamos todo desde cero para lograr soluciones únicas y escalables.",
+    englishCancel: "We don’t use pre-made templates.",
+    englishOk: " We design and build everything from scratch to deliver unique, scalable solutions."
   },
   {
-    icon: FaCircleUser,
-    titleSpanish: "Experiencia de usuario",
-    titleEnglish: "User Experience",
-    spanish:
-      "Optimizamos la experiencia de usuario con diseños intuitivos y funcionales, garantizando satisfacción.",
-    english:
-      "We optimize user experience with intuitive and functional designs, ensuring satisfaction.",
+    titleSpanish: "Identidad auténtica",
+    titleEnglish: "Authentic Identity",
+    spanishCancel: "Nada genérico.",
+    spanishOk: "Creamos sitios con estilo propio, fieles a la esencia de tu marca y con una experiencia personalizada.",
+    englishCancel: "Nothing generic.",
+    englishOk: "We build sites with original style, true to your brand’s essence and offering a custom experience.",
   },
   {
-    icon: BiSupport,
-    titleSpanish: "Soporte continuo",
-    titleEnglish: "Continuous Support",
-    spanish:
-      "Acompañamos a nuestros clientes con soporte técnico y actualizaciones para mantener sus proyectos al día.",
-    english:
-      "We provide ongoing technical support and updates to keep projects up-to-date.",
+    titleSpanish: "Código real, resultados reales",
+    titleEnglish: "Real Code, Real Results",
+    spanishCancel: "No usamos Shopify ni editores visuales.",
+    spanishOk: "Programamos con tecnologías modernas para lograr mayor control y rendimiento.",
+    englishCancel: "We don’t use Shopify or visual editors.",
+    englishOk: "We code with modern technologies to achieve better control and performance.",
   },
 ];
