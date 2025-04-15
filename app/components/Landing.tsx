@@ -76,7 +76,7 @@ export const LandingInfo = () => {
                         className={`bg-blue-800 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl w-fit hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
                     >
                         <div className="flex gap-2 items-center">
-                            <p className="md:text-xl font-semibold">{spanish ? 'Comencemos Hoy!' : `Let${`'`}s Start Now!`}</p>
+                            <p className="md:text-xl font-semibold">{spanish ? 'Comencemos Hoy' : `Let${`'`}s Start Now`}</p>
                             <HiCursorArrowRays size={25}/>
                         </div>
                     </Link>

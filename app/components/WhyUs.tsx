@@ -37,7 +37,7 @@ export const WhyUs = () => {
             <TitleSection
                 firstTitleEnglish="Why choosing"
                 secondTitleEnglish="AsNeed"
-                firstTitleSpanish="Por que elegir"
+                firstTitleSpanish="Por qué elegir"
                 secondTitleSpanish="AsNeed"
                 subTitleEnglish="The strategic partner you need"
                 subTitleSpanish="El socio estratégico que necesitas"
