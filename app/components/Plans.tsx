@@ -6,7 +6,7 @@ import { TitleSection } from "@/app/components/reusable/titleSection"
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 
-import { FaApple } from "react-icons/fa";
+import { FaApple, FaRocket, FaBuilding, FaShoppingCart } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { useMobileView } from "../context/MobileViewContext"
@@ -28,11 +28,11 @@ export const PlansComponent = () => {
         <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} min-h-[100vh] md:pt-20 pt-10`}>
             <TitleSection
                 firstTitleEnglish="Our"
-                secondTitleEnglish="Plans."
+                secondTitleEnglish="Plans"
                 firstTitleSpanish="Nuestros"
-                secondTitleSpanish="Planes."
-                subTitleEnglish="We have a plan for you."
-                subTitleSpanish="Tenemos un plan para ti."
+                secondTitleSpanish="Planes"
+                subTitleEnglish="We have a plan for you"
+                subTitleSpanish="Tenemos un plan para ti"
                 color="from-blue-500 to-violet-600"
                 spanish={spanish}
                 nightMode={nightMode}
@@ -47,8 +47,11 @@ export const PlansComponent = () => {
                         {webPlans.map(plan => (
                             <div key={plan.id} className={`border min-h-[50vh] transition-all duration-200 rounded-xl py-7 px-5 ${nightMode ? 'text-zinc-300 bg-zinc-900 border-blue-900 hover:border-blue-500' : 'text-zinc-700 bg-zinc-100 border-blue-300 hover:border-blue-500'}`}>
                                 <div className={nightMode ? 'text-zinc-300' : 'text-zinc-600'}>
-                                    <h2 className={`text-center md:text-3xl text-xl font-bold border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-800'} w-fit mx-auto pb-1`}>{spanish ? plan.title.spanish : plan.title.english}</h2>
-                                    <p className="mt-6 mb-2">{spanish ? plan.description.spanish : plan.description.english}</p>
+                                    <div className="flex items-center justify-center gap-5">
+                                        <h2 className={`md:text-2xl text-xl font-bold border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-800'} w-fit pb-1`}>{spanish ? plan.title.spanish : plan.title.english}</h2>
+                                        <plan.icon className="text-zinc-400" size={isMobile ? 15 : 25}/>
+                                    </div>
+                                    <p className={`mt-6 mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>{spanish ? plan.description.spanish : plan.description.english}</p>
                                     <Accordion type="single" collapsible>
                                         <AccordionItem 
                                             value="item-1"
@@ -72,12 +75,12 @@ export const PlansComponent = () => {
                                         </AccordionItem>
                                     </Accordion>
                                 </div>
-                                <div className="flex items-center gap-5 mt-10 w-fit mx-auto">
-                                    {/* <div>
-                                        <p>$300.000 ARS</p>
-                                    </div> */}
+                                <div className="flex flex-col items-center gap-5 mt-10 w-fit mx-auto">
                                     <div>
-                                    <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
+                                        <p className="bg-gradient-to-r bg-clip-text text-transparent from-violet-300 to-blue-300 text-xl">{spanish ? `${plan.price === '' ? 'Consultar Precio' : `$${parseInt(plan.price).toLocaleString('es-AR')} ARS`}` : 'Check Price'}</p>
+                                    </div>
+                                    <div>
+                                        <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
                                             {spanish ? 'Quiero saber mas' : 'I want to know more'}
                                         </Link>
                                     </div>
@@ -92,14 +95,36 @@ export const PlansComponent = () => {
                     </div>
                     <div className={`p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 ${nightMode ? 'bg-zinc-900 border-blue-900 hover:border-blue-500' : 'bg-zinc-100 border-blue-300 hover:border-blue-600'}`}>
                         <div className="flex items-center gap-2">
-                            <h1 className={`md:text-3xl text-xl border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
-                            <FaApple size={isMobile ? 25 : 35}/>
-                            <IoLogoAndroid size={isMobile ? 25 : 35}/>
+                            <h1 className={`md:text-2xl text-xl border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
+                            <FaApple size={isMobile ? 25 : 35} className="text-zinc-400"/>
+                            <IoLogoAndroid size={isMobile ? 25 : 35} className="text-zinc-400"/>
                         </div>
-                        <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'} text-sm`}>
+                        <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
                             {spanish 
                                 ? 'Desarrollamos aplicaciones móviles optimizadas para iOS y Android con un solo código, reduciendo costos y tiempos de desarrollo. Utilizamos tecnologías avanzadas como React Native y Flutter, garantizando un alto rendimiento, compatibilidad y una experiencia de usuario fluida en todos los dispositivos. Gracias a un enfoque multiplataforma, las actualizaciones y mejoras se aplican simultáneamente en ambas plataformas, asegurando eficiencia y escalabilidad para el crecimiento del negocio.'
                                 : 'We develop optimized mobile applications for iOS and Android with a single codebase, reducing costs and development time. Using advanced technologies like React Native and Flutter, we ensure high performance, compatibility, and a smooth user experience across all devices. With a multiplatform approach, updates and improvements are applied simultaneously on both platforms, ensuring efficiency and scalability for business growth.'
+                            }
+                        </p>
+                        <div className="w-fit mt-10">
+                            <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
+                                {spanish ? 'Quiero saber mas' : 'I want to know more'}
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-20">
+                    <div className="mb-7 md:py-2 py-1 w-fit rounded-lg">
+                        <h1 className="md:text-4xl font-extralight bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-violet-600 text-lg">{spanish ? 'Extras' : 'Extras'}</h1>
+                    </div>
+                    <div className={`p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 ${nightMode ? 'bg-zinc-900 border-blue-900 hover:border-blue-500' : 'bg-zinc-100 border-blue-300 hover:border-blue-600'}`}>
+                        <div className="flex items-center gap-2">
+                            <h1 className={`md:text-2xl text-xl border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Mantenimiento de aplicaciones' : 'Apps maintenance'}</h1>
+                        </div>
+                        <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                            {spanish 
+                                ? 'Ofrecemos un servicio de mantenimiento mensual para proyectos web y móviles por $30.000, que incluye actualizaciones de código para mantener el sistema seguro y al día, modificaciones leves según las necesidades del cliente, gestión completa de dominio y hosting, corrección de errores técnicos, y soporte continuo para resolver dudas o consultas. Este servicio garantiza el correcto funcionamiento y evolución del proyecto a largo plazo.'
+                                : 'We offer a monthly maintenance service for web and mobile projects for 30 USD, which includes code updates to keep the system secure and up to date, minor modifications based on client needs, full domain and hosting management, bug fixes, and ongoing support to address any questions or issues. This service ensures the long-term functionality and growth of the project.'
                             }
                         </p>
                         <div className="w-fit mt-10">
@@ -117,6 +142,7 @@ export const PlansComponent = () => {
 const webPlans = [
     {
         id: 1,
+        icon: FaRocket,
         title: {
             english: "Landing Page",
             spanish: "Landing Page"
@@ -148,10 +174,12 @@ const webPlans = [
                 "Botones de llamada a la acción (CTA) claros para impulsar conversiones.",
                 "No incluye hosting ni dominio."
             ]
-        }
+        },
+        price: '300000',
     },
     {
         id: 2,
+        icon: FaBuilding,
         title: {
             english: "Corporate Website",
             spanish: "Web Corporativa"
@@ -181,10 +209,12 @@ const webPlans = [
                 "Formularios de contacto y consulta.",
                 "Arquitectura escalable para crecimiento futuro."
             ]
-        }
+        },
+        price: '450000'
     },
     {
         id: 3,
+        icon: FaShoppingCart,
         title: {
             english: "E-commerce",
             spanish: "E-commerce"
@@ -218,6 +248,7 @@ const webPlans = [
                 "Optimización SEO y de rendimiento para mejorar el posicionamiento.",
                 "Optimizado para móviles para una experiencia de compra fluida."
             ]
-        }
+        },
+        price: ''
     }
 ]

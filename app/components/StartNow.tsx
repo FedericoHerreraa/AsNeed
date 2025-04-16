@@ -17,11 +17,11 @@ export const StartNow = () => {
         >
                 <TitleSection
                     firstTitleEnglish="Let's Start"
-                    secondTitleEnglish="Right Now."
+                    secondTitleEnglish="Right Now"
                     firstTitleSpanish="Comencemos "
-                    secondTitleSpanish="Ahora Mismo."
-                    subTitleEnglish="Alright, now let’s get to the important part."
-                    subTitleSpanish="Bueno, ahora sí vamos a lo importante."
+                    secondTitleSpanish="Ahora Mismo"
+                    subTitleEnglish="Alright, now let’s get to the important part"
+                    subTitleSpanish="Bueno, ahora sí vamos a lo importante"
                     color="from-blue-700 to-blue-900"
                     spanish={spanish}
                     nightMode={nightMode}
@@ -30,7 +30,7 @@ export const StartNow = () => {
                 <section className="flex md:flex-row flex-col md:w-[95%] w-[99%] mx-auto mt-20 gap-7">
                     <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
                         <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
-                            {spanish ? 'Coordiná una llamada.' : 'Schedule a call.'}
+                            {spanish ? 'Coordiná una llamada' : 'Schedule a call'}
                         </h2>
                         <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} md:text-md text-sm mb-10`}>
                             {spanish ? '¡Gracias por tu interés en trabajar con nosotros!' : 'Thank you for your interest in working with us!'}

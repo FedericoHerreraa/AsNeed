@@ -16,11 +16,11 @@ export const OurWork = () => {
     >
       <TitleSection
         firstTitleEnglish="Look At Our"
-        secondTitleEnglish="Best Projects."
+        secondTitleEnglish="Best Projects"
         firstTitleSpanish="Mirá Nuestros"
-        secondTitleSpanish="Mejores Proyectos."
-        subTitleEnglish="Before starting you should know what we do."
-        subTitleSpanish="Antes de comenzar debes conocer qué hacemos."
+        secondTitleSpanish="Mejores Proyectos"
+        subTitleEnglish="Before starting you should know what we do"
+        subTitleSpanish="Antes de comenzar debes conocer qué hacemos"
         color="from-orange-400 to-orange-800"
         spanish={spanish}
         nightMode={nightMode}
