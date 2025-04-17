@@ -38,7 +38,7 @@ export const UsersOpinions = () => {
                 secondTitleSpanish="nuestros clientes"
                 subTitleEnglish="Listen to the best clients"
                 subTitleSpanish="Escucha a los mejores clientes"
-                color="from-orange-400 to-orange-800"
+                color={nightMode ? 'from-yellow-600 to-red-900' : 'from-yellow-400 to-red-700' }
                 spanish={spanish}
                 nightMode={nightMode}
             />
