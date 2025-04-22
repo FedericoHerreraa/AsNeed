@@ -4,9 +4,13 @@
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
-import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
-import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
-import desktopRIE from '@/app/img/projects/desktopRIE.png'
+// import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
+// import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
+// import desktopRIE from '@/app/img/projects/desktopRIE.png'
+
+import dektopRIETest from '@/app/img/projects/desktopRIE2.png'
+import desktopBuffaloTest from '@/app/img/projects/desktopBuffalo2.png'
+import desktopPinascoTest from '@/app/img/projects/desktopPinasco2.png'
 
 import mobileBuffalo from '@/app/img/projects/mobileBuffalo.png'
 import mobilePinasco from '@/app/img/projects/mobilePinasco.png'
@@ -56,13 +60,13 @@ export const Projects = () => {
                                         </div>
                                     </div>
                                     {!isMobile ? (
-                                        <div className='h-full w-full'>
+                                        <div className='w-full h-full'>
                                             <Image
                                                 src={item.desktop}
                                                 alt="vista computadora"
                                                 width={800}
                                                 height={600}
-                                                className={`w-full h-full ${nightMode && 'drop-shadow-[0px_0px_10px_rgba(255,255,255,0.6)]'}`}
+                                                className={`w-full`}
                                             />
                                         </div>
                                     ) : (
@@ -70,9 +74,9 @@ export const Projects = () => {
                                             <Image
                                                 src={item.mobile}
                                                 alt="foto de movil 1"
-                                                width={300}
-                                                height={600}
-                                                className={`w-full h-full ${nightMode && 'drop-shadow-[0px_0px_10px_rgba(255,255,255,0.6)]'}`}
+                                                width={100}
+                                                height={100}
+                                                className={``}
                                             />
                                         </div>
                                     )}
@@ -94,7 +98,7 @@ const info = [
         descriptionEnglish: 'Development of an institutional web platform designed for schools, kindergartens, and educational centers of all levels. RIE provides institutions with a professional web presence, an automated attendance system, and an organized messaging log to enhance communication within the educational community.',
         desafioSpanish: 'El desafío fue crear un sistema centralizado y escalable que permitiera a cada institución gestionar su identidad digital, mantener un control eficiente de asistencias, y facilitar la comunicación interna. También se trabajó en un panel administrativo dinámico y adaptable.',
         desafioEnglish: 'The challenge was to create a centralized and scalable system that would allow each institution to manage its digital identity, efficiently track attendance, and facilitate internal communication. A dynamic and adaptable admin dashboard was also developed as part of the platform.',
-        desktop: desktopRIE,
+        desktop: dektopRIETest,
         mobile: mobileRIE,
         url: 'https://www.somosrie.com'
     },
@@ -106,7 +110,7 @@ const info = [
         descriptionEnglish: 'Development of an online store for the sale of musical instruments. The project includes a product section, a shopping cart, authentication, user roles, and purchases.',
         desafioSpanish: 'El desafío fue implementar una experiencia de compra completa, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito, realizar compras y gestionar sus pedidos. También se trabajó en la autentificación y roles de usuario para garantizar la seguridad de la información.',
         desafioEnglish: 'The challenge was to implement a complete shopping experience, ensuring that users could navigate through sections, add products to the cart, make purchases, and manage their orders. Authentication and user roles were also key focuses to ensure information security.',
-        desktop: desktopBuffalo,
+        desktop: desktopBuffaloTest,
         mobile: mobileBuffalo,
         url: 'https://www.sbmusic.ar'
     },
@@ -118,7 +122,7 @@ const info = [
         descriptionEnglish: 'Design of a website for a dental clinic. The project includes a contact form, an image gallery, and a services section.',
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
         desafioEnglish: 'The main challenge was to ensure that the design conveys trust and professionalism, while making patients feel comfortable browsing the site. Additionally, the focus was on highlighting the clinic\'s key services and providing a mobile-friendly experience.',
-        desktop: desktopPinasco,
+        desktop: desktopPinascoTest,
         mobile: mobilePinasco,
         url: 'https://www.odontologiapinasco.com'
     }

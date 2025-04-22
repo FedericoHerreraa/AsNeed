@@ -22,7 +22,7 @@ export const StartNow = () => {
                     secondTitleSpanish="Ahora Mismo"
                     subTitleEnglish="Alright, now let’s get to the important part"
                     subTitleSpanish="Bueno, ahora sí vamos a lo importante"
-                    color={nightMode ? 'from-blue-700 to-blue-900' : 'from-blue-500 to-blue-700'}
+                    color={'from-blue-700 to-blue-500'}
                     spanish={spanish}
                     nightMode={nightMode}
                 />

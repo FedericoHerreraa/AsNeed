@@ -22,7 +22,7 @@ export const OurWay = () => {
         secondTitleSpanish="Trabajar"
         subTitleEnglish="First of all we will show you our philosophy"
         subTitleSpanish="Primero que nada te mostramos nuestra filosofía"
-        color="from-green-500 to-green-800"
+        color="from-green-600 to-green-400"
         spanish={spanish}
         nightMode={nightMode}
       />

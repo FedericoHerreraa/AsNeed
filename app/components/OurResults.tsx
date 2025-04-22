@@ -47,7 +47,7 @@ export const OurResults = () => {
                 secondTitleSpanish="Resultados"
                 subTitleEnglish="Let's find out what we can do"
                 subTitleSpanish="Enterate de lo que podemos hacer"
-                color={nightMode ? 'from-yellow-600 to-red-900' : 'from-yellow-400 to-red-700'}
+                color={'from-yellow-500 to-red-500'}
                 spanish={spanish}
                 nightMode={nightMode}
             />

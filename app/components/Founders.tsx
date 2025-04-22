@@ -27,7 +27,7 @@ export const Founders = () => {
         secondTitleSpanish="Fundadores"
         subTitleEnglish="Those who bring the magic to life"
         subTitleSpanish="Los que llevan la magia adelante"
-        color="from-violet-400 to-violet-800"
+        color="from-violet-700 to-violet-500"
         spanish={spanish}
         nightMode={nightMode}
       />

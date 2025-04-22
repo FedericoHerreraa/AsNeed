@@ -26,7 +26,7 @@ export const TrustedByCompanies = () => {
                 secondTitleSpanish="Mejores Clientes"
                 subTitleEnglish="Our Partners"
                 subTitleSpanish="Nuestros Clientes"
-                color="from-blue-700 to-violet-700"
+                color="from-blue-500 to-violet-500"
                 spanish={spanish}
                 nightMode={nightMode}
             />

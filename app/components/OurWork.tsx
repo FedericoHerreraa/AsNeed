@@ -21,7 +21,7 @@ export const OurWork = () => {
         secondTitleSpanish="Mejores Proyectos"
         subTitleEnglish="Before starting you should know what we do"
         subTitleSpanish="Antes de comenzar debes conocer qué hacemos"
-        color="from-orange-400 to-orange-800"
+        color="from-orange-500 to-orange-400"
         spanish={spanish}
         nightMode={nightMode}
       />

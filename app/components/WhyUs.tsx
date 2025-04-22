@@ -41,7 +41,7 @@ export const WhyUs = () => {
                 secondTitleSpanish="AsNeed"
                 subTitleEnglish="The strategic partner you need"
                 subTitleSpanish="El socio estratégico que necesitas"
-                color="from-blue-600 to-violet-700"
+                color="from-blue-600 to-violet-600"
                 spanish={spanish}
                 nightMode={nightMode}
             />
