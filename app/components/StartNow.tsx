@@ -41,11 +41,11 @@ export const StartNow = () => {
                                 {spanish 
                                     ? 'Esta sección es para programar una reunión con ' 
                                     : 'This section is to schedule a meeting with '}
-                                <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
+                                <span className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
                                     {spanish ? 'Camila' : 'Camila'}
                                 </span> 
                                 {spanish ? ' y ' : ' and '}
-                                <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
+                                <span className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
                                     {spanish ? 'Federico' : 'Federico'}
                                 </span>,
                                 {spanish 
@@ -99,7 +99,7 @@ export const StartNow = () => {
                                     <p>{spanish ? '1 hora.' : '1 hour.'}</p>
                                 </div>
                             </div>
-                            <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-800 via-blue-900 to-violet-900' : 'from-blue-600 to-blue-300'} md:p-5 p-3 md:rounded-lg rounded-md shadow-xl`}>
+                            <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-700 to-violet-950' : 'from-blue-600 to-blue-300'} md:p-5 p-3 md:rounded-lg rounded-md shadow-xl`}>
                                 <p>
                                     {spanish 
                                         ? 'Nuestro objetivo es conocerte mejor, entender tus requerimientos y asegurarnos de que todo esté alineado para el éxito de tu proyecto.' 
