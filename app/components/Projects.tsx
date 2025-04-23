@@ -74,8 +74,8 @@ export const Projects = () => {
                                         <Image
                                             src={item.mobile}
                                             alt="foto de movil 1"
-                                            width={100}
-                                            height={100}
+                                            width={300}
+                                            height={800}
                                             className={`w-full h-full`}
                                         />
                                     </div>
