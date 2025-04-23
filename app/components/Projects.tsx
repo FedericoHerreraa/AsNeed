@@ -76,7 +76,7 @@ export const Projects = () => {
                                             alt="foto de movil 1"
                                             width={100}
                                             height={100}
-                                            className={``}
+                                            className={`w-full h-full`}
                                         />
                                     </div>
                                 )}
