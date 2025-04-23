@@ -31,57 +31,57 @@ export const Projects = () => {
             {info.map((item, index) => (
                 <div key={index} className="overflow-hidden">
                     <motion.section
-                        initial={{ x: index % 2 === 0 ? -60 : 60, opacity: 0 }} 
-                        whileInView={{ x: 0, opacity: 1 }} 
-                        transition={{ duration: 1.5, ease: "easeOut" }} 
+                        initial={{ x: index % 2 === 0 ? -60 : 60, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
                         viewport={{ once: true }}
                     >
-                        <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? `md:border-l-4 ${nightMode ? 'border-l-blue-950' : 'border-l-blue-800' }` : `md:border-r-4 ${nightMode ? 'border-r-blue-950' : 'border-r-blue-800' } `}  ${nightMode ? 'bg-black' : ''}`}>
+                        <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index % 2 === 0 ? `md:border-l-4 ${nightMode ? 'border-l-blue-950' : 'border-l-blue-800'}` : `md:border-r-4 ${nightMode ? 'border-r-blue-950' : 'border-r-blue-800'} `}  ${nightMode ? 'bg-black' : ''}`}>
                             <div className="md:pl-10">
-                                <h1 className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
+                                <h1 className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index % 2 === 0
                                     ? ''
                                     : 'md:text-end md:mr-10'
-                                } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </h1>
+                                    } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </h1>
                             </div>
-                                <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-10 md:w-[95%] w-[90%] mx-auto`}>
-                                    <div className={`md:w-1/2 w-full md:min-h-96 min-h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
-                                        <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
-                                        <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafío:' : 'Our Challenge:'}</h2>
-                                        <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
-                                        <div className={`flex ${index%2 === 0 ? 'justify-start' : 'md:justify-end'} `}>
-                                            <Link 
-                                                href={item.url} 
-                                                target="_blank"
-                                                className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 md:hover:scale-110 transition-all duration-150 md:px-10 px-7 md:py-3 py-2 rounded-lg mt-14 w-fit"
-                                            >
-                                                <p className={`${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Visitar' : 'Navigate'}</p>
-                                                <ArrowRight size={20} className={`${nightMode ? '' : 'text-zinc-200'}`}/>
-                                            </Link>
-                                        </div>
+                            <div className={`flex ${index % 2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col'} gap-10 md:w-[95%] w-[90%] mx-auto`}>
+                                <div className={`md:w-1/2 w-full md:min-h-96 min-h-[480px] md:${index % 2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
+                                    <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
+                                    <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafío:' : 'Our Challenge:'}</h2>
+                                    <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
+                                    <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'md:justify-end'} `}>
+                                        <Link
+                                            href={item.url}
+                                            target="_blank"
+                                            className={`flex items-center gap-2 ${index % 2 === 0 ? 'bg-gradient-to-r flex-row' : 'bg-gradient-to-l flex-row-reverse'} from-blue-900 to-blue-600 hover:bg-blue-700 md:hover:scale-110 transition-all duration-150 md:px-10 px-7 md:py-3 py-2 rounded-lg mt-14 w-fit`}
+                                        >
+                                            <p className={`${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Visitar' : 'Navigate'}</p>
+                                            <ArrowRight size={20} className={`${nightMode ? '' : 'text-zinc-200'} ${index % 2 !== 0 && 'rotate-180'}`} />
+                                        </Link>
                                     </div>
-                                    {!isMobile ? (
-                                        <div className='w-full h-full'>
-                                            <Image
-                                                src={item.desktop}
-                                                alt="vista computadora"
-                                                width={800}
-                                                height={600}
-                                                className={`w-full`}
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className='w-full'>
-                                            <Image
-                                                src={item.mobile}
-                                                alt="foto de movil 1"
-                                                width={100}
-                                                height={100}
-                                                className={``}
-                                            />
-                                        </div>
-                                    )}
                                 </div>
-                        </section> 
+                                {!isMobile ? (
+                                    <div className='w-full h-full'>
+                                        <Image
+                                            src={item.desktop}
+                                            alt="vista computadora"
+                                            width={800}
+                                            height={600}
+                                            className={`w-full`}
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className='w-full'>
+                                        <Image
+                                            src={item.mobile}
+                                            alt="foto de movil 1"
+                                            width={100}
+                                            height={100}
+                                            className={``}
+                                        />
+                                    </div>
+                                )}
+                            </div>
+                        </section>
                     </motion.section>
                 </div>
             ))}

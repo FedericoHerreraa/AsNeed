@@ -22,7 +22,12 @@ export const LandingInfo = () => {
 
     useEffect(() => {
         const typed = new Typed(typedRef.current, {
-            strings: [spanish ? "Digital" : "Business", spanish ? "Hoy" : "Startup", spanish ? "Online" : "Brand"], 
+            strings: [
+                spanish ? "Digital" : "Business", 
+                spanish ? "Hoy" : "Startup", 
+                spanish ? "Online" : "Brand",
+                spanish ? "Con IA" : "with AI",
+            ], 
             typeSpeed: 100,  
             backSpeed: 50,  
             backDelay: 1500,
@@ -37,9 +42,9 @@ export const LandingInfo = () => {
             <Image
                 src={imgLanding}
                 alt="Landing Image"
-                fill
                 className="object-cover"
                 priority
+                fill
             />
 
             <div className={nightMode ? 'absolute inset-0 bg-gradient-to-r from-black/100 via-black/80 to-transparent z-10 ': 'absolute inset-0 bg-gradient-to-r from-white/100 via-white/80 to-transparent z-10'} />
@@ -61,8 +66,8 @@ export const LandingInfo = () => {
                     </h1>
                     <p className={nightMode ? "md:text-xl text-md md:text-left text-center text-zinc-300" : "md:text-xl text-md md:text-left text-center text-zinc-700"}>
                         {spanish 
-                            ? 'En "AsNeed", transformamos tus ideas en realidad digital. Diseñamos y programamos aplicaciones móviles, plataformas web y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
-                            : 'At "AsNeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms, and social media, fully customized to meet your business needs.'
+                            ? 'En "AsNeed", transformamos tus ideas en realidad digital. Diseñamos y desarrollamos aplicaciones móviles, plataformas web con IA y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
+                            : 'At "AsNeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms with AI, and social media, fully customized to meet your business needs.'
                         }
                     </p>
                     <div className="flex items-center gap-3">
@@ -73,7 +78,7 @@ export const LandingInfo = () => {
                     </div>
                     <Link 
                         href='/start-now'
-                        className={`bg-blue-800 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl w-fit hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
+                        className={`bg-gradient-to-r from-blue-700 to-violet-600 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl w-fit hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
                     >
                         <div className="flex gap-2 items-center">
                             <p className="md:text-xl font-semibold">{spanish ? 'Comencemos Hoy' : `Let${`'`}s Start Now`}</p>

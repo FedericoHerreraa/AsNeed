@@ -27,7 +27,7 @@ export const Footer = () => {
                     <Image src={nightMode ? logoDark : logoLight} alt="" className="md:w-[85px] w-16 h-auto" />
                     <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-4xl text-2xl`}>AsNeed</h1>
                 </div>
-                <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-lg text-base text-center`}>{spanish ? 'Transformamos tus ideas en realidad digital.' : 'We turn your ideas into digital reality.'}</p>
+                <p className={`bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-zinc-200 via-zinc-400 to-zinc-200 ' : 'from-zinc-600 via-zinc-500 to-zinc-600'} md:text-lg text-base text-center`}>{spanish ? 'Transformamos tus ideas en realidad digital.' : 'We turn your ideas into digital reality.'}</p>
                 <div className={`flex items-center gap-3 md:text-base text-sm ${nightMode ? 'text-zinc-400' : 'text-zinc-600'} mt-5`}>
                     <FaRegCopyright />
                     <p>2025 AsNeed - {spanish ? 'Todos los derechos reservados' : 'All rights reserved'}</p>

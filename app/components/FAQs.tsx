@@ -87,4 +87,11 @@ const info = [
         answerSpanish: "No es necesario. Podemos crear el diseño según tus necesidades y objetivos.",
         answerEnglish: "It is not necessary. We can create the design based on your needs and goals."
     },
+    {
+        id: 6,
+        questionSpanish: "¿Hacen integraciones con inteligencia artificial?",
+        questionEnglish: "Do you offer AI integrations?",
+        answerSpanish: "Sí, desarrollamos e integramos soluciones con inteligencia artificial adaptadas a tu proyecto.",
+        answerEnglish: "Yes, we develop and integrate AI-powered solutions tailored to your project."
+    }
 ];

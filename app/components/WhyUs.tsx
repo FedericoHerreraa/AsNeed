@@ -63,7 +63,7 @@ export const WhyUs = () => {
                         height={isMobile ? 120 : 230}
                     />
                     <p className={`${nightMode ? 'text-zinc-300' : 'text-zinc-500'} md:text-xl`}>{spanish ? 'Transformamos tus ideas en realidad digital' : 'We turn your ideas into digital reality'}</p>
-                    <Link href='/start-now' className="flex items-center gap-1 bg-blue-800 px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-75 mt-5">
+                    <Link href='/start-now' className="flex items-center gap-1 bg-gradient-to-r from-blue-900 to-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all duration-200 mt-5">
                         <p className={`md:text-xl ${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Empecemos ahora' : 'Start right now'}</p>
                         <MdArrowRightAlt size={isMobile ? 20 : 30} className={nightMode ? '' : 'text-zinc-200'}/>
                     </Link>
@@ -77,8 +77,8 @@ export const WhyUs = () => {
 const info = [
   {
     icon: <FaRocket />,
-    textSpanish: "Utilizamos las últimas tecnologías para desarrollar soluciones modernas y escalables.",
-    textEnglish: "We use the latest technologies to develop modern and scalable solutions."
+    textSpanish: "Utilizamos las últimas tecnologías para desarrollar soluciones modernas y escalables integradas con IA.",
+    textEnglish: "We use the latest technologies to develop modern and scalable solutions with AI integrations."
   },
   {
     icon: <FaLightbulb />,
