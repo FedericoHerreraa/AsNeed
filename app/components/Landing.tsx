@@ -26,7 +26,7 @@ export const LandingInfo = () => {
                 spanish ? "Digital" : "Business", 
                 spanish ? "Hoy" : "Startup", 
                 spanish ? "Online" : "Brand",
-                spanish ? "Con IA" : "with AI",
+                spanish ? "Con IA" : "IA Business",
             ], 
             typeSpeed: 100,  
             backSpeed: 50,  
