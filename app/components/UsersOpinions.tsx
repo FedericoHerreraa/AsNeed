@@ -42,7 +42,27 @@ export const UsersOpinions = () => {
                 spanish={spanish}
                 nightMode={nightMode}
             />
-
+            
+            {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-20 md:w-[75%] w-[70%] mx-auto bg-gradient-to-br from-black via-zinc-900/80 to-black rounded-full">
+                {testimonials.map((testi, idx) => (
+                    <div key={idx} className="bg-black text-zinc-200 border border-zinc-800 shadow rounded-2xl p-6 flex flex-col gap-4 max-w-sm">
+                        <div className="flex items-center gap-4">
+                            <Image
+                                src={testi.img}
+                                alt={"Imagen"}
+                                width={48}
+                                height={48}
+                                className="rounded-full"
+                            />
+                            <div>
+                                <p className="font-semibold text-zinc-200">{testi.name.es}</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">{testi.work?.es}</p>
+                            </div>
+                        </div>
+                        <p className="text-zinc-300 text-sm">{testi.review.es}</p>
+                    </div>
+                ))}
+            </div> */}
             <section className="mt-20 md:w-[80%] w-[70%] mx-auto">
                 <Carousel 
                     opts={{
@@ -103,6 +123,10 @@ const testimonials = [
             es: "Muchas gracias Fede y Cami por la paciencia y la profesionalidad. Quedamos muy conformes con su trabajo!",
             en: "Thank you very much Fede and Cami for your patience and professionalism. We are very satisfied with your work!"
         },
+        work: {
+            es: "Odontología",
+            en: "Dentistry"
+        },
         img: pinascoLogo,
         className: 'h-10 w-9'
     },
@@ -112,6 +136,10 @@ const testimonials = [
         review: {
             es: "Desde que implementamos nuestra plataforma web desarrollada por AsNeed, nuestras reservas han aumentado un 40%. La interfaz es intuitiva, rápida y completamente adaptada a nuestras necesidades. Su equipo siempre estuvo disponible para cualquier ajuste que necesitamos. ¡100% recomendados!",
             en: "Since implementing our web platform developed by AsNeed, our bookings have increased by 40%. The interface is intuitive, fast, and fully adapted to our needs. Their team was always available for any adjustments we needed. 100% recommended!"
+        },
+        work: {
+            es: "Odontología",
+            en: "Dentistry"
         },
         img: buffaloLogo,
         className: 'h-10 w-9'
@@ -123,6 +151,10 @@ const testimonials = [
             es: "Soy cliente (odontólogo), han desarrollado mi página web de manera precisa y eficaz, rápidamente entendieron cuál era mi objetivo y necesidad de comunicación y llevaron a cabo mi web bien ordenada  y dinámica",
             en: "I am a client (dentist), they have developed my website precisely and effectively, quickly understood what my goal and communication need was and carried out my website well organized and dynamic"
         },
+        work: {
+            es: "Odontología",
+            en: "Dentistry"
+        },
         img: chrisLogo,
         className: 'rounded-xl h-10 w-10'
     },
@@ -133,7 +165,39 @@ const testimonials = [
             es: "Gracias a AsNeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
             en: "Thanks to AsNeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
         },
+        work: {
+            es: "Odontología",
+            en: "Dentistry"
+        },
         img: nonnomingoLogo,
         className: 'rounded-xl h-10 w-10'
-    }
+    },
+    // {
+    //     id: 4,
+    //     name: { es: "Pizzería NonnoMingo", en: "NonnoMingo Pizzeria" },
+    //     review: {
+    //         es: "Gracias a AsNeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
+    //         en: "Thanks to AsNeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
+    //     },
+    //     work: {
+    //         es: "Odontología",
+    //         en: "Dentistry"
+    //     },
+    //     img: nonnomingoLogo,
+    //     className: 'rounded-xl h-10 w-10'
+    // },
+    // {
+    //     id: 4,
+    //     name: { es: "Pizzería NonnoMingo", en: "NonnoMingo Pizzeria" },
+    //     review: {
+    //         es: "Gracias a AsNeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
+    //         en: "Thanks to AsNeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
+    //     },
+    //     work: {
+    //         es: "Odontología",
+    //         en: "Dentistry"
+    //     },
+    //     img: nonnomingoLogo,
+    //     className: 'rounded-xl h-10 w-10'
+    // }
 ];
