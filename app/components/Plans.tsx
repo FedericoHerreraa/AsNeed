@@ -77,9 +77,9 @@ export const PlansComponent = () => {
                                 </div>
                                 <div className="flex flex-col items-center gap-5 mt-10 w-fit mx-auto">
                                     <div>
-                                        <p className={`bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-violet-300 to-blue-300' : 'from-violet-500 to-blue-500'} text-xl`}>{spanish ? `${plan.price === '' ? 'Consultar Precio' : `$${parseInt(plan.price).toLocaleString('es-AR')} ARS`}` : 'Check Price'}</p>
+                                        <p className={`bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-violet-300 to-blue-300' : 'from-violet-500 to-blue-500'} text-xl`}><span className="text-sm">{spanish ? 'a partir de  ' : 'starting at  '}</span> ${Number(plan.price).toLocaleString()} USD</p>
                                     </div>
-                                    <div>
+                                    <div>   
                                         <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
                                             {spanish ? 'Quiero saber mas' : 'I want to know more'}
                                         </Link>
@@ -175,7 +175,7 @@ const webPlans = [
                 "No incluye hosting ni dominio."
             ]
         },
-        price: '300000',
+        price: '400',
     },
     {
         id: 2,
@@ -210,7 +210,7 @@ const webPlans = [
                 "Arquitectura escalable para crecimiento futuro."
             ]
         },
-        price: '450000'
+        price: '600'
     },
     {
         id: 3,
@@ -249,6 +249,6 @@ const webPlans = [
                 "Optimizado para móviles para una experiencia de compra fluida."
             ]
         },
-        price: ''
+        price: '1500'
     }
 ]

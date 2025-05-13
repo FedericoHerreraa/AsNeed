@@ -201,3 +201,4 @@ const testimonials = [
     //     className: 'rounded-xl h-10 w-10'
     // }
 ];
+
