@@ -11,13 +11,10 @@ import { HiCursorArrowRays } from "react-icons/hi2";
 import { FaHandshake } from 'react-icons/fa';
 
 import imgLanding from "@/public/img/background.png"
-import { useNightMode } from '@/app/context/NightModeContext'
 import { useLenguage } from '@/app/context/LenguageContext';
 
 export const LandingInfo = () => {
-    const { nightMode } = useNightMode();
     const { spanish } = useLenguage()
-
     const typedRef = useRef(null);
 
     useEffect(() => {
@@ -47,32 +44,29 @@ export const LandingInfo = () => {
                 fill
             />
 
-            <div className={nightMode ? 'absolute inset-0 bg-gradient-to-r from-black/100 via-black/80 to-transparent z-10 ': 'absolute inset-0 bg-gradient-to-r from-white/100 via-white/80 to-transparent z-10'} />
-            <div className={nightMode 
-                    ? 'absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black z-10' 
-                    : 'absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white z-10'} 
-                />
+            <div className='absolute inset-0 bg-gradient-to-r dark:from-black/100 dark:via-black/80 dark:to-transparent dark:z-10 from-white/100 via-white/80 to-transparent z-10' />
+            <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent dark:to-black z-10 to-white' />
             <div className="absolute top-0 left-0 w-full z-30">
                 <Header bgDark="transparent" bgLight="transparent" />
             </div>
             <div className="relative z-20 w-[80%] mx-auto flex justify-between gap-10 h-full items-center">
                 <div className="flex flex-col md:gap-10 gap-7 md:w-1/2 md:items-start items-center">
-                    <h1 className={nightMode ? 'md:text-6xl text-4xl md:text-left text-center font-semibold text-white' : 'md:text-6xl text-4xl md:text-left text-center font-semibold text-black'}>
+                    <h1 className='md:text-6xl text-4xl md:text-left text-center font-semibold dark:text-white text-black'>
                         {spanish ? 'Comenzá tu' : 'Start Your Own'}{' '}
                         <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
                             {spanish ? 'Negocio' : 'Digital'}{' '}
                         </span>
                         <span ref={typedRef}></span>
                     </h1>
-                    <p className={nightMode ? "md:text-xl text-md md:text-left text-center text-zinc-300" : "md:text-xl text-md md:text-left text-center text-zinc-700"}>
+                    <p className="md:text-xl text-md md:text-left text-center dark:text-zinc-300 text-zinc-700">
                         {spanish 
                             ? 'En "AsNeed", transformamos tus ideas en realidad digital. Diseñamos y desarrollamos aplicaciones móviles, plataformas web con IA y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
                             : 'At "AsNeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms with AI, and social media, fully customized to meet your business needs.'
                         }
                     </p>
                     <div className="flex items-center gap-3">
-                        <FaHandshake size={25} className={nightMode ? "text-white": "text-zinc-700"}/>
-                        <p className={nightMode ? "md:text-lg text-md md:text-left text-center text-zinc-200" : "md:text-lg text-md md:text-left text-center text-zinc-700"}>
+                        <FaHandshake size={25} className="dark:text-white text-zinc-700"/>
+                        <p className="md:text-lg text-md md:text-left text-center dark:text-zinc-200 text-zinc-700">
                             {spanish ? '' : 'Trusted by '}<span className="font-bold">10+</span> {spanish ? 'compañías confían en nosotros' : 'companies'}
                         </p>
                     </div>

@@ -2,7 +2,6 @@
 
 
 import { useLenguage } from "@/app/context/LenguageContext"
-import { useNightMode } from "@/app/context/NightModeContext"
 import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import Autoplay from "embla-carousel-autoplay"
@@ -26,11 +25,10 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
 export const UsersOpinions = () => {
-    const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
 
     return (
-        <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[60vh]`}>
+        <div className='dark:bg-black dark:text-white min-h-[60vh]'>
             <TitleSection
                 firstTitleEnglish="What our users"
                 secondTitleEnglish="are saying"
@@ -40,7 +38,6 @@ export const UsersOpinions = () => {
                 subTitleSpanish="Escucha a los mejores clientes"
                 color={'from-yellow-500 to-red-500'}
                 spanish={spanish}
-                nightMode={nightMode}
             />
             
             {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-20 md:w-[75%] w-[70%] mx-auto bg-gradient-to-br from-black via-zinc-900/80 to-black rounded-full">
@@ -83,7 +80,7 @@ export const UsersOpinions = () => {
                                         {items.map((testimonial) => (
                                             <div
                                                 key={testimonial.id}
-                                                className={`${nightMode ? 'bg-zinc-90 border border-zinc-800 text-zinc-300' : 'bg-zinc-50 border border-zinc-200 text-zinc-800'} md:p-7 p-4 rounded-lg`}
+                                                className='dark:bg-zinc-900 border dark:border-zinc-800 dark:text-zinc-300 bg-zinc-50 border-zinc-200 text-zinc-800 md:p-7 p-4 rounded-lg'
                                             >
                                                 <p className="text-lg font-bold flex items-center gap-2">
                                                     <Image
@@ -107,8 +104,8 @@ export const UsersOpinions = () => {
                             );
                         })}
                     </CarouselContent>
-                    <CarouselPrevious className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-200 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
-                    <CarouselNext className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-200 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
+                    <CarouselPrevious className='dark:bg-black dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900 hover:text-white bg-zinc-200 border-zinc-200 hover:bg-zinc-600'/>
+                    <CarouselNext className='dark:bg-black dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900 hover:text-white bg-zinc-200 border-zinc-200 hover:bg-zinc-600'/>
                 </Carousel>
             </section>
         </div>

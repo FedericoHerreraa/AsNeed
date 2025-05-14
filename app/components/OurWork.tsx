@@ -1,18 +1,16 @@
 "use client";
 
 import { useLenguage } from "@/app/context/LenguageContext";
-import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { Projects } from "./Projects";
 import { UITechnologyComponent } from "./UITechnology";
 
 export const OurWork = () => {
-  const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
 
   return (
     <div
-      className={`${nightMode ? "bg-black text-zinc-300" : ""} min-h-[150vh] md:pt-20 pt-10`}
+      className='dark:bg-black dark:text-zinc-300 min-h-[150vh] md:pt-20 pt-10'
     >
       <TitleSection
         firstTitleEnglish="Look At Our"
@@ -23,7 +21,6 @@ export const OurWork = () => {
         subTitleSpanish="Antes de comenzar debes conocer qué hacemos"
         color="from-orange-500 to-orange-400"
         spanish={spanish}
-        nightMode={nightMode}
       />
 
       <UITechnologyComponent />

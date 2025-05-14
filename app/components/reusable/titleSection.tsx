@@ -11,7 +11,6 @@ export const TitleSection = ({
     subTitleEnglish,
     color,
     spanish,
-    nightMode
 } : {
     firstTitleSpanish: string
     secondTitleSpanish: string
@@ -21,7 +20,6 @@ export const TitleSection = ({
     subTitleEnglish: string
     color: string
     spanish: boolean
-    nightMode: boolean
 }) => {
     return (
         <motion.div
@@ -38,7 +36,7 @@ export const TitleSection = ({
                     }
                 </p>
                     
-                <h1 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-900'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
+                <h1 className='dark:text-zinc-300 text-zinc-900 text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold'>
                     {spanish ? firstTitleSpanish : firstTitleEnglish}{" "}
                     <span className={`bg-gradient-to-r ${color} bg-clip-text text-transparent`}>
                         {spanish ? secondTitleSpanish : secondTitleEnglish}

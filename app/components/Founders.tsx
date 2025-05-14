@@ -1,6 +1,5 @@
 "use client";
 
-import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 
 import imageFede from "@/app/img/founders/fede.jpg";
@@ -14,12 +13,11 @@ import { useMobileView } from "@/app/context/MobileViewContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 
 export const Founders = () => {
-  const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
   const { isMobile } = useMobileView();
 
   return (
-    <div className={`${nightMode ? "bg-black" : ""} min-h-[75vh]`}>
+    <div className='dark:bg-black min-h-[75vh]'>
       <TitleSection
         firstTitleEnglish="Meet Our"
         secondTitleEnglish="Founders"
@@ -29,13 +27,10 @@ export const Founders = () => {
         subTitleSpanish="Los que llevan la magia adelante"
         color="from-violet-700 to-violet-500"
         spanish={spanish}
-        nightMode={nightMode}
       />
 
       <section
-        className={`${
-          nightMode ? "bg-zinc-900" : "bg-zinc-100"
-        } md:p-10 p-5 flex flex-col md:gap-2 gap-10 min-h-96 rounded-xl shadow-xl mt-20 md:w-[80%] w-[95%] mx-auto`}
+        className='dark:bg-zinc-900 bg-zinc-100 md:p-10 p-5 flex flex-col md:gap-2 gap-10 min-h-96 rounded-xl shadow-xl mt-20 md:w-[80%] w-[95%] mx-auto'
       >
         <div className="md:mx-10 mx-2 flex md:flex-row flex-col md:items-center md:gap-0 gap-5 items-start">
           <div className="md:w-1/4 flex flex-row items-center gap-5">
@@ -59,20 +54,12 @@ export const Founders = () => {
             )}
           </div>
           <div
-            className={`md:text-lg ${
-              nightMode ? "text-zinc-300" : "text-zinc-800"
-            } md:w-3/4`}
+            className='md:text-lg dark:text-zinc-300 text-zinc-800 md:w-3/4'
           >
             {spanish ? (
               <p>
                 Mi nombre es{" "}
-                <span
-                  className={`font-bold bg-gradient-to-r ${
-                    nightMode
-                      ? "from-blue-500 to-blue-200"
-                      : "from-blue-700 to-blue-400"
-                  } bg-clip-text text-transparent`}
-                >
+                <span className='font-bold bg-gradient-to-r dark:from-blue-500 dark:to-blue-200 from-blue-700 to-blue-400 bg-clip-text text-transparent'>
                   Camila Aznar
                 </span>{" "}
                 y soy desarrolladora Front-end. Actualmente, me dedico a crear
@@ -84,13 +71,7 @@ export const Founders = () => {
             ) : (
               <p>
                 My name is{" "}
-                <span
-                  className={`font-bold bg-gradient-to-r ${
-                    nightMode
-                      ? "from-blue-500 to-blue-200"
-                      : "from-blue-700 to-blue-400"
-                  } bg-clip-text text-transparent`}
-                >
+                <span className='font-bold bg-gradient-to-r dark:from-blue-500 dark:to-blue-200 from-blue-700 to-blue-400 bg-clip-text text-transparent'>
                   Camila Aznar
                 </span>
                 , and I am a Front-end Developer. I specialize in creating
@@ -104,21 +85,11 @@ export const Founders = () => {
         </div>
 
         <div className="md:mx-10 mx-2 flex md:flex-row flex-col-reverse md:items-center md:gap-0 gap-5 items-end">
-          <div
-            className={`md:text-lg ${
-              nightMode ? "text-zinc-300" : "text-zinc-800"
-            } md:w-3/4`}
-          >
+          <div className='md:text-lg dark:text-zinc-300 text-zinc-800 md:w-3/4'>
             {spanish ? (
               <p>
                 Mi nombre es{" "}
-                <span
-                  className={`font-bold bg-gradient-to-r ${
-                    nightMode
-                      ? "from-blue-500 to-blue-200"
-                      : "from-blue-700 to-blue-400"
-                  } bg-clip-text text-transparent`}
-                >
+                <span className='font-bold bg-gradient-to-r dark:from-blue-500 dark:to-blue-200 from-blue-700 to-blue-400 bg-clip-text text-transparent'>
                   Federico Herrera
                 </span>{" "}
                 y soy programador Full Stack. Con conocimientos profesionales
@@ -130,13 +101,7 @@ export const Founders = () => {
             ) : (
               <p>
                 My name is{" "}
-                <span
-                  className={`font-bold bg-gradient-to-r ${
-                    nightMode
-                      ? "from-blue-500 to-blue-200"
-                      : "from-blue-700 to-blue-400"
-                  } bg-clip-text text-transparent`}
-                >
+                <span className='font-bold bg-gradient-to-r dark:from-blue-500 dark:to-blue-200 from-blue-700 to-blue-400 bg-clip-text text-transparent'>
                   Federico Herrera
                 </span>
                 , and I am a Full Stack Developer. Currently, I&#39;m pursuing a
