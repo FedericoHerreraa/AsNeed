@@ -5,7 +5,6 @@ import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
 import { HiQueueList } from "react-icons/hi2";
 
-import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
 
@@ -35,55 +34,57 @@ import {
     SheetTrigger,
 } from "@/app/components/ui/sheet"
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 interface TabProps {
     spanish: boolean
-    nightMode: boolean
-    setNightMode: (value: boolean) => void
     setSpanish: (value: boolean) => void
     isOpen: boolean
     setIsOpen: (value: boolean) => void
+    theme: string | undefined
+    setTheme: (value: string) => void
 }
 
 
 export const Header = ({bgDark, bgLight} : {bgDark: string, bgLight: string}) => {
-    const { nightMode, setNightMode } = useNightMode()
     const { spanish, setSpanish } = useLenguage()
     const { isMobile } = useMobileView()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
+    const { theme, setTheme } = useTheme()
+
     return (
-        <header className={` ${nightMode ? `text-zinc-300 ${bgDark}` : `${bgLight}`} `}>
+        <header className={`dark:text-zinc-300  ${theme === 'dark' ? bgDark : bgLight } `}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-8 ">
                 <Link href='/' className="flex items-center gap-1">
                     <Image 
-                        src={nightMode ? logoDark : logoLight} 
+                        src={theme === 'dark' ? logoDark : logoLight} 
                         alt="logo" 
                         className="md:w-[85px] w-16" 
                     />
                     <div className="flex flex-col">    
-                        <h1 className='md:text-2xl text-lg'>AsNeed</h1>
+                        <h1 className='dark:text-white text-black md:text-2xl text-lg'>AsNeed</h1>
                         <h4 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h4>
                     </div>
                 </Link>
                 <nav className="flex gap-10 items-center">
                     {isMobile ? (
                         tabsMobileView({
-                            setNightMode,
                             setSpanish,
                             spanish,
-                            nightMode,
                             isOpen,
                             setIsOpen,
+                            theme,
+                            setTheme,
                         })
                     ) : (
                         tabsDesktopView({
-                            setNightMode,
                             setSpanish,
                             spanish,
-                            nightMode,
                             isOpen,
                             setIsOpen,
+                            theme,
+                            setTheme,
                         })
                     )}
                 </nav>
@@ -93,10 +94,10 @@ export const Header = ({bgDark, bgLight} : {bgDark: string, bgLight: string}) =>
 }
 
 const tabsDesktopView = ({ 
-    setNightMode,
     setSpanish,
     spanish,
-    nightMode,
+    theme,
+    setTheme,
 } : TabProps ) => {
     return (
         <>
@@ -111,9 +112,9 @@ const tabsDesktopView = ({
             ))}
             <div
                 className="cursor-pointer"
-                onClick={() => setNightMode(!nightMode)}
+                onClick={() =>  setTheme(theme === 'dark' ? 'light' : 'dark') } 
             >
-                {nightMode 
+                {theme === 'dark' 
                     ? <MdWbSunny size={20}/> 
                     : <MdNightlight size={20}/>}
             </div>
@@ -123,12 +124,12 @@ const tabsDesktopView = ({
                     onValueChange={() => setSpanish(!spanish)}
                 >
                     <SelectTrigger 
-                        className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                        className='w-[125px] dark:bg-black dark:border-zinc-600 bg-white border-zinc-300 m-0 border'
                     >
                         <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                     </SelectTrigger>
                     <SelectContent 
-                        className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
+                        className='dark:bg-black dark:text-zinc-200 dark:border-zinc-800 bg-white text-zinc-800 border-zinc-200'
                     >
                         <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200 " value="spanish">
                             <div className="flex items-center gap-2">
@@ -159,26 +160,26 @@ const tabsDesktopView = ({
 
 
 const tabsMobileView = ({ 
-    setNightMode,
     setSpanish,
     spanish,
-    nightMode,
     isOpen,
     setIsOpen,
+    theme,
+    setTheme,
 } : TabProps ) => {
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger>
                 <HiQueueList size={30}/>
             </SheetTrigger>
-            <SheetContent className={`${nightMode ? 'bg-black border-zinc-800 pt-10' : 'pt-10 border-zinc-300' }`}>
+            <SheetContent className='dark:bg-black dark:border-zinc-800 pt-10 border-zinc-300'>
                 <SheetHeader>
-                    <SheetTitle className={`text-2xl pb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>
+                    <SheetTitle className='text-2xl pb-10 text-start dark:text-zinc-200 text-zinc-800'>
                         <button 
                             onClick={() => setIsOpen(false)} 
                             className="absolute top-0 right-0 m-5 cursor-pointer text-lg"
                         >
-                            {nightMode ? '❌' : '✖️'}
+                            {theme === 'dark' ? '❌' : '✖️'}
                         </button>
                         AsNeed
                     </SheetTitle>
@@ -186,9 +187,7 @@ const tabsMobileView = ({
                         {tabs.map((tab) => (
                             <Link 
                                 key={tab.id}
-                                onClick={() => {
-                                    setIsOpen(false)
-                                }}
+                                onClick={() => setIsOpen(false) }
                                 href={tab.url}
                                 className="text-lg"
                             >
@@ -201,12 +200,12 @@ const tabsMobileView = ({
                                 onValueChange={() => setSpanish(!spanish)}
                             >
                                 <SelectTrigger 
-                                    className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                    className='w-[125px] dark:bg-black dark:border-zinc-600 bg-white border-zinc-300 m-0 border'
                                 >
                                     <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                                 </SelectTrigger>
                                 <SelectContent 
-                                    className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
+                                    className='dark:bg-black dark:text-zinc-200 dark:border-zinc-800 bg-white text-zinc-800 border-zinc-200'
                                 >
                                     <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">
                                         <div className="flex items-center gap-2">
@@ -233,9 +232,9 @@ const tabsMobileView = ({
                         </>
                         <button
                             className="cursor-pointer"
-                            onClick={() => setNightMode(!nightMode)}
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark') }
                         >
-                            {nightMode 
+                            {theme === 'dark' 
                                 ? <MdWbSunny size={20}/>
                                 : <MdNightlight size={20}/>}
                         </button>
