@@ -2,7 +2,6 @@
 
 
 import { useLenguage } from "@/app/context/LenguageContext";
-import { useNightMode } from "@/app/context/NightModeContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
 import argFlag from '@/app/img/others/argentina.png'
 
@@ -14,21 +13,22 @@ import Image from "next/image";
 
 import logoDark from '@/app/img/logos/newDarkLogo.png'
 import logoLight from '@/app/img/logos/newLightLogo.png'
+import { useTheme } from "next-themes";
 
 export const Footer = () => {
-    const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
+    const { theme } = useTheme()
 
     return (
-        <footer className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
-            <div className={`${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} flex flex-col gap-5 items-center h-full w-full`}>
+        <footer className='h-[70vh] dark:bg-black pt-20'>
+            <div className='dark:bg-zinc-950 bg-zinc-100 flex flex-col gap-5 items-center h-full w-full'>
                 <div className="flex gap-1 items-center justify-center pt-20">
-                    <Image src={nightMode ? logoDark : logoLight} alt="" className="md:w-[85px] w-16 h-auto" />
-                    <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-4xl text-2xl`}>AsNeed</h1>
+                    <Image src={theme === 'dark' ? logoDark : logoLight} alt="" className="md:w-[85px] w-16 h-auto" />
+                    <h1 className='dark:text-zinc-300 text-black md:text-4xl text-2xl'>AsNeed</h1>
                 </div>
-                <p className={`bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-zinc-200 via-zinc-400 to-zinc-200 ' : 'from-zinc-600 via-zinc-500 to-zinc-600'} md:text-lg text-base text-center`}>{spanish ? 'Transformamos tus ideas en realidad digital.' : 'We turn your ideas into digital reality.'}</p>
-                <div className={`flex items-center gap-3 md:text-base text-sm ${nightMode ? 'text-zinc-400' : 'text-zinc-600'} mt-5`}>
+                <p className='bg-gradient-to-r bg-clip-text text-transparent dark:from-zinc-200 dark:via-zinc-400 dark:to-zinc-200 from-zinc-600 via-zinc-500 to-zinc-600 md:text-lg text-base text-center'>{spanish ? 'Transformamos tus ideas en realidad digital.' : 'We turn your ideas into digital reality.'}</p>
+                <div className='flex items-center gap-3 md:text-base text-sm dark:text-zinc-400 text-zinc-600 mt-5'>
                     <FaRegCopyright />
                     <p>2025 AsNeed - {spanish ? 'Todos los derechos reservados' : 'All rights reserved'}</p>
                 </div>
@@ -38,15 +38,15 @@ export const Footer = () => {
                         alt="Argentina Flag"
                         width={isMobile ? 15 : 25}
                     />
-                    <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Hecho en ' : 'Made in '}Buenos Aires, Argentina</p>
+                    <p className='dark:text-zinc-400 text-zinc-600'>{spanish ? 'Hecho en ' : 'Made in '}Buenos Aires, Argentina</p>
                 </div>
                 <div>
                     <div className="flex gap-5 mt-5">
                         <a href="https://www.linkedin.com/company/asneed/?viewAsMember=true" target="_blank">
-                            <SiLinkedin size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`} />
+                            <SiLinkedin size={isMobile ? 20 : 30} className='text-zinc-500 dark:hover:text-zinc-300 hover:text-zinc-700 transition-all duration-150'/>
                         </a>
                         <a href="https://www.instagram.com/asneedsolutions/" target="_blank">
-                            <SiInstagram size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`}/>
+                            <SiInstagram size={isMobile ? 20 : 30} className='text-zinc-500 dark:hover:text-zinc-300 hover:text-zinc-700 transition-all duration-150'/>
                         </a>
                     </div>
                 </div>

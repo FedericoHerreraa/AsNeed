@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { TitleSection } from "@/app/components/reusable/titleSection"
 import { useLenguage } from "@/app/context/LenguageContext"
-import { useNightMode } from "@/app/context/NightModeContext"
 
 import { FaApple, FaRocket, FaBuilding, FaShoppingCart } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
@@ -21,11 +20,10 @@ import {
 
 export const PlansComponent = () => {
     const { spanish } = useLenguage()
-    const { nightMode } = useNightMode()
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} min-h-[100vh] md:pt-20 pt-10`}>
+        <div className='dark:bg-black dark:text-zinc-300 text-zinc-700 min-h-[100vh] md:pt-20 pt-10'>
             <TitleSection
                 firstTitleEnglish="Our"
                 secondTitleEnglish="Plans"
@@ -35,7 +33,6 @@ export const PlansComponent = () => {
                 subTitleSpanish="Tenemos un plan para ti"
                 color="from-blue-500 to-violet-600"
                 spanish={spanish}
-                nightMode={nightMode}
             />
 
             <section className="md:w-[90%] w-[95%] mx-auto mt-20">
@@ -45,25 +42,25 @@ export const PlansComponent = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {webPlans.map(plan => (
-                            <div key={plan.id} className={`border min-h-[50vh] transition-all duration-200 rounded-xl py-7 px-5 ${nightMode ? 'text-zinc-300 bg-zinc-900 border-blue-900 hover:border-blue-500' : 'text-zinc-700 bg-zinc-100 border-blue-300 hover:border-blue-500'}`}>
-                                <div className={nightMode ? 'text-zinc-300' : 'text-zinc-600'}>
+                            <div key={plan.id} className='border min-h-[50vh] transition-all duration-200 rounded-xl py-7 px-5 dark:text-zinc-300 dark:bg-zinc-900 dark:border-blue-900 hover:border-blue-500 text-zinc-700 bg-zinc-100 border-blue-300'>
+                                <div className='dark:text-zinc-300 text-zinc-600'>
                                     <div className="flex items-center justify-center gap-5">
-                                        <h2 className={`md:text-2xl text-xl font-bold border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-800'} w-fit pb-1`}>{spanish ? plan.title.spanish : plan.title.english}</h2>
+                                        <h2 className='md:text-2xl text-xl font-bold border-b-[0.5px] dark:border-b-zinc-300 border-b-zinc-800 w-fit pb-1'>{spanish ? plan.title.spanish : plan.title.english}</h2>
                                         <plan.icon className="text-zinc-400" size={isMobile ? 15 : 25}/>
                                     </div>
-                                    <p className={`mt-6 mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>{spanish ? plan.description.spanish : plan.description.english}</p>
+                                    <p className='mt-6 mb-2 dark:text-zinc-400 text-zinc-500'>{spanish ? plan.description.spanish : plan.description.english}</p>
                                     <Accordion type="single" collapsible>
                                         <AccordionItem 
                                             value="item-1"
                                             className='border-none rounded-lg'
                                         >
-                                            <AccordionTrigger className={`font-bold text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-500'} w-fit`}>
+                                            <AccordionTrigger className='font-bold text-lg dark:text-zinc-300 text-zinc-500 w-fit'>
                                                 Ver Caracteristicas
                                             </AccordionTrigger>
                                             
                                             <AccordionContent className="my-2">
                                                 <div className="mt-2">
-                                                    <h3 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-600'} md:text-lg`}>{spanish ? 'Caracteristicas:' : 'Features:'}</h3>
+                                                    <h3 className='dark:text-zinc-300 text-zinc-600 md:text-lg'>{spanish ? 'Caracteristicas:' : 'Features:'}</h3>
                                                     {(spanish ? plan.features.spanish : plan.features.english).map((feature, index) => (
                                                         <p key={index} className="flex items-center text-sm gap-2 ml-1 mb-2 mt-2">
                                                             <IoIosCheckmarkCircle className="text-yellow-500"/>
@@ -77,10 +74,10 @@ export const PlansComponent = () => {
                                 </div>
                                 <div className="flex flex-col items-center gap-5 mt-10 w-fit mx-auto">
                                     <div>
-                                        <p className={`bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-violet-300 to-blue-300' : 'from-violet-500 to-blue-500'} text-xl`}><span className="text-sm">{spanish ? 'a partir de  ' : 'starting at  '}</span> ${Number(plan.price).toLocaleString()} USD</p>
+                                        <p className='bg-gradient-to-r bg-clip-text text-transparent dark:from-violet-300 dark:to-blue-300 from-violet-500 to-blue-500 text-xl'><span className="text-sm">{spanish ? 'a partir de  ' : 'starting at  '}</span> ${Number(plan.price).toLocaleString()} USD</p>
                                     </div>
                                     <div>   
-                                        <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
+                                        <Link href='/start-now' className='w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md dark:bg-blue-950 dark:hover:bg-blue-800 dark:text-zinc-300 bg-blue-300 hover:bg-blue-500 text-zinc-700'>
                                             {spanish ? 'Quiero saber mas' : 'I want to know more'}
                                         </Link>
                                     </div>
@@ -93,20 +90,20 @@ export const PlansComponent = () => {
                     <div className="mb-7 md:py-2 py-1 w-fit rounded-lg">
                         <h1 className="md:text-4xl font-extralight bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-violet-600 text-lg">{spanish ? 'Desarrollo Movil' : 'Mobile Development'}</h1>
                     </div>
-                    <div className={`p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 ${nightMode ? 'bg-zinc-900 border-blue-900 hover:border-blue-500' : 'bg-zinc-100 border-blue-300 hover:border-blue-600'}`}>
+                    <div className='p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 dark:bg-zinc-900 dark:border-blue-900 dark:hover:border-blue-500 bg-zinc-100 border-blue-300 hover:border-blue-600'>
                         <div className="flex items-center gap-2">
-                            <h1 className={`md:text-2xl text-xl border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
+                            <h1 className='md:text-2xl text-xl border-b-[0.5px] dark:border-b-zinc-300 border-b-zinc-700 w-fit pb-1'>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
                             <FaApple size={isMobile ? 25 : 35} className="text-zinc-400"/>
                             <IoLogoAndroid size={isMobile ? 25 : 35} className="text-zinc-400"/>
                         </div>
-                        <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                        <p className='mt-3 dark:text-zinc-400 text-zinc-500'>
                             {spanish 
                                 ? 'Desarrollamos aplicaciones móviles optimizadas para iOS y Android con un solo código, reduciendo costos y tiempos de desarrollo. Utilizamos tecnologías avanzadas como React Native y Flutter, garantizando un alto rendimiento, compatibilidad y una experiencia de usuario fluida en todos los dispositivos. Gracias a un enfoque multiplataforma, las actualizaciones y mejoras se aplican simultáneamente en ambas plataformas, asegurando eficiencia y escalabilidad para el crecimiento del negocio.'
                                 : 'We develop optimized mobile applications for iOS and Android with a single codebase, reducing costs and development time. Using advanced technologies like React Native and Flutter, we ensure high performance, compatibility, and a smooth user experience across all devices. With a multiplatform approach, updates and improvements are applied simultaneously on both platforms, ensuring efficiency and scalability for business growth.'
                             }
                         </p>
                         <div className="w-fit mt-10">
-                            <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
+                            <Link href='/start-now' className='w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md dark:bg-blue-950 dark:hover:bg-blue-800 dark:text-zinc-300 bg-blue-300 hover:bg-blue-500 text-zinc-700'>
                                 {spanish ? 'Quiero saber mas' : 'I want to know more'}
                             </Link>
                         </div>
@@ -117,18 +114,18 @@ export const PlansComponent = () => {
                     <div className="mb-7 md:py-2 py-1 w-fit rounded-lg">
                         <h1 className="md:text-4xl font-extralight bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-violet-600 text-lg">{spanish ? 'Extras' : 'Extras'}</h1>
                     </div>
-                    <div className={`p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 ${nightMode ? 'bg-zinc-900 border-blue-900 hover:border-blue-500' : 'bg-zinc-100 border-blue-300 hover:border-blue-600'}`}>
+                    <div className='p-7 border  min-h-40 w-full rounded-xl transition-all duration-200 dark:bg-zinc-900 dark:border-blue-900 dark:hover:border-blue-500 bg-zinc-100 border-blue-300 hover:border-blue-600'>
                         <div className="flex items-center gap-2">
-                            <h1 className={`md:text-2xl text-xl border-b-[0.5px] ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Mantenimiento de aplicaciones' : 'Apps maintenance'}</h1>
+                            <h1 className='md:text-2xl text-xl border-b-[0.5px] dark:border-b-zinc-300 border-b-zinc-700 w-fit pb-1'>{spanish ? 'Mantenimiento de aplicaciones' : 'Apps maintenance'}</h1>
                         </div>
-                        <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                        <p className='mt-3 dark:text-zinc-400 text-zinc-500'>
                             {spanish 
                                 ? 'Ofrecemos un servicio de mantenimiento mensual para proyectos web y móviles por $30.000, que incluye actualizaciones de código para mantener el sistema seguro y al día, modificaciones leves según las necesidades del cliente, gestión completa de dominio y hosting, corrección de errores técnicos, y soporte continuo para resolver dudas o consultas. Este servicio garantiza el correcto funcionamiento y evolución del proyecto a largo plazo.'
                                 : 'We offer a monthly maintenance service for web and mobile projects for 30 USD, which includes code updates to keep the system secure and up to date, minor modifications based on client needs, full domain and hosting management, bug fixes, and ongoing support to address any questions or issues. This service ensures the long-term functionality and growth of the project.'
                             }
                         </p>
                         <div className="w-fit mt-10">
-                            <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md ${nightMode ? 'bg-blue-950 hover:bg-blue-800 text-zinc-300' : 'bg-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
+                            <Link href='/start-now' className='w-full mt-5 py-2 px-4 transition-all duration-100 rounded-md dark:bg-blue-950 dark:hover:bg-blue-800 dark:text-zinc-300 bg-blue-300 hover:bg-blue-500 text-zinc-700'>
                                 {spanish ? 'Quiero saber mas' : 'I want to know more'}
                             </Link>
                         </div>

@@ -1,19 +1,17 @@
 "use client";
 
 import { useLenguage } from "@/app/context/LenguageContext";
-import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { MdOutlineCancel } from "react-icons/md";
 import { motion } from "framer-motion";
 
 
 export const OurWay = () => {
-  const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
 
   return (
     <div
-      className={`${nightMode ? "bg-[url('/img/bg-black.jpg')]" : "bg-[url('/img/bg-white.jpg')]"} md:min-h-[100vh] min-h-[70vh] w-full bg-cover bg-center `}
+      className="dark:bg-[url('/img/bg-black.jpg')] bg-[url('/img/bg-white.jpg')] md:min-h-[100vh] min-h-[70vh] w-full bg-cover bg-center"
     >
       <TitleSection
         firstTitleEnglish="Our Way Of "
@@ -24,7 +22,6 @@ export const OurWay = () => {
         subTitleSpanish="Primero que nada te mostramos nuestra filosofía"
         color="from-green-600 to-green-400"
         spanish={spanish}
-        nightMode={nightMode}
       />
 
       <div className="mt-20 md:px-10 px-4">
@@ -37,8 +34,7 @@ export const OurWay = () => {
               >
                 <div className="flex flex-col items-start">
                   <h1
-                    className={`md:text-3xl font-semibold mb-3 ${nightMode ? "text-zinc-300" : "text-zinc-700"
-                      }`}
+                    className="md:text-3xl font-semibold mb-3 dark:text-zinc-300 text-zinc-700"
                   >
                     {spanish ? arrow.titleSpanish : arrow.titleEnglish}
                   </h1>
@@ -63,7 +59,7 @@ export const OurWay = () => {
                     viewport={{ once: true }}
                   >
                     <div className="flex items-center gap-3 ml-5">
-                      <p className={`md:text-lg text-sm bg-gradient-to-r bg-clip-text text-transparent ${nightMode ? 'from-orange-400 to-violet-400' : 'from-orange-600 to-violet-600'} w-full`}>
+                      <p className='md:text-lg text-sm bg-gradient-to-r bg-clip-text text-transparent dark:from-orange-400 dark:to-violet-400 from-orange-600 to-violet-600 w-full'>
                         {spanish ? arrow.spanishOk : arrow.englishOk}
                       </p>
                     </div>

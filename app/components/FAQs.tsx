@@ -1,7 +1,6 @@
 'use client'
 
 import { useLenguage } from "@/app/context/LenguageContext"
-import { useNightMode } from "@/app/context/NightModeContext"
 
 import {
     Accordion,
@@ -13,11 +12,10 @@ import { TitleSection } from "./reusable/titleSection"
   
 
 export const FAQs = () => {
-    const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
 
     return (
-        <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} pb-20`}>
+        <div className='dark:bg-black dark:text-zinc-300 text-zinc-700 pb-20'>
             <TitleSection
                 firstTitleEnglish="Frequently Asked"
                 secondTitleEnglish="Questions"
@@ -27,7 +25,6 @@ export const FAQs = () => {
                 subTitleSpanish="FAQs"
                 color="from-blue-600 to-violet-700"
                 spanish={spanish}
-                nightMode={nightMode}
             />
 
             <section className="md:w-[40%] w-[80%] mx-auto mt-20">
@@ -36,7 +33,7 @@ export const FAQs = () => {
                         <AccordionItem 
                             key={index} 
                             value={`item-${item.id}`}
-                            className={`border ${nightMode ? 'border-zinc-700' : 'border-zinc-300'} rounded-lg mb-4 px-2`}
+                            className='border dark:border-zinc-700 border-zinc-300 rounded-lg mb-4 px-2'
                         >
                             <AccordionTrigger className="font-bold text-base">{spanish ? item.questionSpanish : item.questionEnglish}</AccordionTrigger>
                             <AccordionContent>

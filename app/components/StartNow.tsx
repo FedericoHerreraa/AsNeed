@@ -2,18 +2,16 @@
 'use client'
 
 import { useLenguage } from "@/app/context/LenguageContext";
-import { useNightMode } from "@/app/context/NightModeContext"
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { ContactUsController } from "./ContactUsController";
 
 export const StartNow = () => {
-    const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
 
     return (
         <div 
-            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] md:pt-20 pt-10`}
+            className='dark:bg-black min-h-[100vh] md:pt-20 pt-10'
         >
                 <TitleSection
                     firstTitleEnglish="Let's Start"
@@ -24,15 +22,14 @@ export const StartNow = () => {
                     subTitleSpanish="Bueno, ahora sí vamos a lo importante"
                     color={'from-blue-700 to-blue-500'}
                     spanish={spanish}
-                    nightMode={nightMode}
                 />
 
                 <section className="flex md:flex-row flex-col md:w-[95%] w-[99%] mx-auto mt-20 gap-7">
-                    <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
-                        <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
+                    <div className='md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg dark:text-zinc-300'>
+                        <h2 className='md:text-3xl text-xl dark:text-zinc-200 text-zinc-800 font-semibold'>
                             {spanish ? 'Coordiná una llamada' : 'Schedule a call'}
                         </h2>
-                        <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} md:text-md text-sm mb-10`}>
+                        <p className='dark:text-zinc-400 text-zinc-500 md:text-md text-sm mb-10'>
                             {spanish ? '¡Gracias por tu interés en trabajar con nosotros!' : 'Thank you for your interest in working with us!'}
                         </p>
 
@@ -99,7 +96,7 @@ export const StartNow = () => {
                                     <p>{spanish ? '1 hora.' : '1 hour.'}</p>
                                 </div>
                             </div>
-                            <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-700 to-violet-950' : 'from-blue-600 to-blue-300'} md:p-5 p-3 md:rounded-lg rounded-md shadow-xl`}>
+                            <div className='bg-gradient-to-b dark:from-blue-700 dark:to-violet-950 from-blue-600 to-blue-300 md:p-5 p-3 md:rounded-lg rounded-md shadow-xl'>
                                 <p>
                                     {spanish 
                                         ? 'Nuestro objetivo es conocerte mejor, entender tus requerimientos y asegurarnos de que todo esté alineado para el éxito de tu proyecto.' 
@@ -108,13 +105,13 @@ export const StartNow = () => {
                             </div>
                         </div>
                         
-                        <p className={`mt-7 ${nightMode ? 'text-zinc-300' : 'text-zinc-600'} animate-pulse`}>
+                        <p className='mt-7 dark:text-zinc-300 text-zinc-600 animate-pulse'>
                             {spanish 
                                 ? 'Selecciona el horario y dia que más te convenga en el calendario a continuación. ¡Te esperamos!' 
                                 : 'Select the time and day that works best for you in the calendar. We look forward to seeing you!'}
                         </p>
                     </div>
-                    <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg ${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'}`}>
+                    <div className='md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg dark:bg-zinc-950 bg-zinc-100'>
                         <ContactUsController />
                     </div>
                 </section>

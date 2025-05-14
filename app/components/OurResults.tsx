@@ -1,7 +1,6 @@
 "use client";
 
 import { useLenguage } from "@/app/context/LenguageContext";
-import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "./reusable/titleSection";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
@@ -32,13 +31,11 @@ const Counter = ({ from = 0, to, plus }: { from?: number; to: number, plus: bool
 };
 
 export const OurResults = () => {
-    const { nightMode } = useNightMode();
     const { spanish } = useLenguage();
 
     return (
         <div
-            className={`${nightMode ? "bg-black text-zinc-300" : "text-zinc-700"
-                } pb-20 min-h-[50vh]`}
+            className="dark:bg-black dark:text-zinc-300 text-zinc-700 pb-20 min-h-[50vh]"
         >
             <TitleSection
                 firstTitleEnglish="We Show"
@@ -49,12 +46,11 @@ export const OurResults = () => {
                 subTitleSpanish="Enterate de lo que podemos hacer"
                 color={'from-yellow-500 to-red-500'}
                 spanish={spanish}
-                nightMode={nightMode}
             />
 
             <section className="md:w-[80%] w-[95%] mx-auto mt-20">
-                <div className={`flex justify-around items-center w-full h-60 ${nightMode ? ' bg-gradient-to-br from-orange-800 to-violet-600' : 'bg-gradient-to-br from-orange-400 to-violet-400'} shadow-lg rounded-xl p-[2px]`}>
-                    <div className={`flex w-full h-full justify-center items-center md:gap-10 gap-5 text-center ${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} md:p-10 p-3 rounded-xl`}>
+                <div className='flex justify-around items-center w-full h-60 bg-gradient-to-br dark:from-orange-800 dark:to-violet-600 from-orange-400 to-violet-400 shadow-lg rounded-xl p-[2px]'>
+                    <div className='flex w-full h-full justify-center items-center md:gap-10 gap-5 text-center dark:bg-zinc-900 bg-zinc-100 md:p-10 p-3 rounded-xl'>
                         <div className="w-1/3 flex flex-col items-center gap-2">
                             <Counter to={50} plus={false}/>
                             <p className="md:text-lg text-zinc-500 flex md:flex-row flex-col items-center gap-2">

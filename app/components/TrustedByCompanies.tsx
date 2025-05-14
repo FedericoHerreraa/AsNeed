@@ -1,7 +1,6 @@
 'use client'
 
 import { useLenguage } from "@/app/context/LenguageContext"
-import { useNightMode } from "@/app/context/NightModeContext"
 import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import christianSaadDark from '@/app/img/logos/ChristianSaad-dark.png'
@@ -15,11 +14,10 @@ import Image from "next/image"
 import Marquee from "react-fast-marquee"
 
 export const TrustedByCompanies = () => {
-    const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
     
     return (
-        <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-white md:min-h-[60vh] min-h-[45vh]`}>
+        <div className='py-10 dark:bg-black text-white md:min-h-[60vh] min-h-[45vh]'>
             <TitleSection
                 firstTitleEnglish="Trusted by the"
                 secondTitleEnglish="Best Clients"
@@ -29,10 +27,9 @@ export const TrustedByCompanies = () => {
                 subTitleSpanish="Nuestros Clientes"
                 color="from-blue-500 to-violet-500"
                 spanish={spanish}
-                nightMode={nightMode}
             />
 
-            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-800'} mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap`}>
+            <section className='w-full dark:bg-[#101011] bg-zinc-800 mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap'>
                 <Marquee speed={100}>
                     {companies.map((company, index) => (
                         <Image

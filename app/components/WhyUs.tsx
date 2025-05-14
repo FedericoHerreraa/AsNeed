@@ -1,8 +1,8 @@
 'use client'
 
 import { useLenguage } from "@/app/context/LenguageContext"
-import { useNightMode } from "@/app/context/NightModeContext"
-import { useMobileView } from "../context/MobileViewContext"
+import { useMobileView } from "@/app/context/MobileViewContext"
+import { useTheme } from "next-themes";
 import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import Image from "next/image"
@@ -26,14 +26,13 @@ import {
 } from "react-icons/fa";
 
 
-
 export const WhyUs = () => {
-    const { nightMode } = useNightMode()
+    const { theme } = useTheme()
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[70vh]`}>
+        <div className='dark:bg-black dark:text-white min-h-[70vh]'>
             <TitleSection
                 firstTitleEnglish="Why choosing"
                 secondTitleEnglish="AsNeed"
@@ -43,7 +42,6 @@ export const WhyUs = () => {
                 subTitleSpanish="El socio estratégico que necesitas"
                 color="from-blue-600 to-violet-600"
                 spanish={spanish}
-                nightMode={nightMode}
             />
 
             <section className="mt-20 md:w-[80%] w-[95%] mx-auto flex md:flex-row flex-col gap-10">
@@ -51,21 +49,21 @@ export const WhyUs = () => {
                     {info.map((item, index) => (
                         <div key={index} className="flex items-center gap-3 md:ml-5 ml-3">
                             {item.icon}
-                            <p className={`md:text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-500'}`}>{spanish ? item.textSpanish : item.textEnglish}</p>
+                            <p className='md:text-lg dark:text-zinc-300 text-zinc-500'>{spanish ? item.textSpanish : item.textEnglish}</p>
                         </div>
                     ))}
                 </div>
                 <div className="flex flex-col gap-2 items-center justify-center md:w-1/3 w-full">
                     <Image
-                        src={nightMode ? logoDark : logoLight}
+                        src={theme === 'dark' ? logoDark : logoLight}
                         alt="logo"
                         width={isMobile ? 120 : 230}
                         height={isMobile ? 120 : 230}
                     />
-                    <p className={`${nightMode ? 'text-zinc-300' : 'text-zinc-500'} md:text-xl`}>{spanish ? 'Transformamos tus ideas en realidad digital' : 'We turn your ideas into digital reality'}</p>
+                    <p className='darktext-zinc-300 text-zinc-500 md:text-xl'>{spanish ? 'Transformamos tus ideas en realidad digital' : 'We turn your ideas into digital reality'}</p>
                     <Link href='/start-now' className="flex items-center gap-1 bg-gradient-to-r from-blue-900 to-blue-600 px-4 py-2 rounded-lg hover:scale-105 transition-all duration-200 mt-5">
-                        <p className={`md:text-xl ${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Empecemos ahora' : 'Start right now'}</p>
-                        <MdArrowRightAlt size={isMobile ? 20 : 30} className={nightMode ? '' : 'text-zinc-200'}/>
+                        <p className='md:text-xl text-zinc-200'>{spanish ? 'Empecemos ahora' : 'Start right now'}</p>
+                        <MdArrowRightAlt size={isMobile ? 20 : 30} className='text-zinc-200'/>
                     </Link>
                 </div>
             </section>
