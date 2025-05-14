@@ -5,6 +5,7 @@ import { MobileViewProvider } from "@/app/context/MobileViewContext";
 import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 import { ThemeProvider } from "./components/providers/ThemeProvider";
+import { SmoothScrollProvider } from "./context/SmoothScrollContext";
 
 export default function RootLayout({
   children,
@@ -21,9 +22,11 @@ export default function RootLayout({
         <LenguageProvider>
           <MobileViewProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              {children}
-              <Footer />
-              <BackToTop />
+              <SmoothScrollProvider>
+                {children}
+                <Footer />
+                <BackToTop />
+              </SmoothScrollProvider>
             </ThemeProvider>
           </MobileViewProvider>
         </LenguageProvider>
