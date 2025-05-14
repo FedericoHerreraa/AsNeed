@@ -7,8 +7,8 @@ import { LineSeparator } from "@/app/components/LineSeparator";
 import {Header} from "@/app/components/Header"
 
 export const metadata: Metadata = {
-    title: "Choose Your Plan | AsNeed",
-    description: "At AsNeed, we offer flexible plans tailored to your needs. Explore our Basic, Premium, and Gold plans to find the perfect solution for you.",
+    title: "Elegí Tu Plan | AsNeed",
+    description: "En AsNeed, ofrecemos planes flexibles adaptados a tus necesidades. Explora nuestros planes Básico, Premium y Gold para encontrar la solución perfecta para ti.",
 };
 
 export default function Plans() {

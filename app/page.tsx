@@ -11,8 +11,8 @@ import { FAQs } from "@/app/components/FAQs";
 import { OurResults } from "@/app/components/OurResults";
 
 export const metadata: Metadata = {
-    title: "Grow Your Business | AsNeed",
-    description: "At AsNeed, we provide tailored solutions to help your business reach new heights. Discover how our expertise can transform your ideas into reality and start your journey with us today.",
+    title: "Hace Crecer Tu Negocio | AsNeed",
+    description: "En AsNeed, ofrecemos soluciones personalizadas para ayudar a que tu negocio alcance nuevos niveles. Descubre cómo nuestra experiencia puede transformar tus ideas en realidad y comienza tu camino con nosotros hoy mismo.",
 };
 
 export default function HomePage() {

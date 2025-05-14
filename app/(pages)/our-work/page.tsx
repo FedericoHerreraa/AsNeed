@@ -7,8 +7,8 @@ import { FAQs } from "@/app/components/FAQs";
 import { Header } from "@/app/components/Header";
 
 export const metadata: Metadata = {
-    title: "Our Best Projects | AsNeed",
-    description: "At AsNeed, we showcase cutting-edge UI and technology solutions. Explore our best projects and discover how our expertise can bring your ideas to life.",
+    title: "Nuestros Mejores Proyectos | AsNeed",
+    description: "En AsNeed, mostramos soluciones de interfaz y tecnología de vanguardia. Explora nuestros mejores proyectos y descubrí cómo nuestra experiencia puede dar vida a tus ideas.",
 };
 
 
