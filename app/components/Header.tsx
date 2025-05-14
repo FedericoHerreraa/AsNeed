@@ -16,7 +16,7 @@ import usaFlag from '@/app/img/others/usa.png'
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 import {
@@ -51,6 +51,15 @@ export const Header = ({bgDark, bgLight} : {bgDark: string, bgLight: string}) =>
     const { isMobile } = useMobileView()
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null 
+    }
 
     return (
         <header className={`dark:text-zinc-300  ${theme === 'dark' ? bgDark : bgLight } `}>
