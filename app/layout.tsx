@@ -3,7 +3,6 @@ import "./globals.css";
 import { LenguageProvider } from "@/app/context/LenguageContext";
 import { NightModeProvider } from "@/app/context/NightModeContext";
 import { MobileViewProvider } from "@/app/context/MobileViewContext";
-// import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 
@@ -22,7 +21,6 @@ export default function RootLayout({
         <LenguageProvider>
           <NightModeProvider>
             <MobileViewProvider>
-              
               {children}
               <Footer />
               <BackToTop /> 

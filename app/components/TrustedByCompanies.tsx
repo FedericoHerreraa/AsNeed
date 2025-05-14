@@ -10,6 +10,7 @@ import pillowLogo from '@/app/img/logos/pillowLogo.png'
 import buffaloCafe from '@/app/img/logos/buffalo.png'
 import buffaloMusic from '@/app/img/logos/buffaloMusic.png'
 import buffaloStrongDark from '@/app/img/logos/buffaloStrong-dark.png'
+import ngDesinfecciones from '@/app/img/logos/ng-desinfecciones-logo.png'
 import Image from "next/image"
 import Marquee from "react-fast-marquee"
 
@@ -79,4 +80,10 @@ const companies = [
         img: buffaloMusic,
         className: 'md:w-[200px] md:h-[110px] w-[130px] h-[70px] md:mx-20 mx-7'
     },
+    {
+        name: 'NG Desinfecciones',
+        img: ngDesinfecciones,
+        className: 'md:w-[180px] md:h-[110px] w-[110px] h-[70px] md:mx-20 mx-7'
+    },
+
 ]
