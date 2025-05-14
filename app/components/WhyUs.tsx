@@ -24,12 +24,22 @@ import {
   FaTools, 
   FaLock 
 } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 
 export const WhyUs = () => {
     const { theme } = useTheme()
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null 
+    }
 
     return (
         <div className='dark:bg-black dark:text-white min-h-[70vh]'>

@@ -14,11 +14,21 @@ import Image from "next/image";
 import logoDark from '@/app/img/logos/newDarkLogo.png'
 import logoLight from '@/app/img/logos/newLightLogo.png'
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export const Footer = () => {
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
     const { theme } = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    if (!mounted) {
+        return null 
+    }
 
     return (
         <footer className='h-[70vh] dark:bg-black pt-20'>
