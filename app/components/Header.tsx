@@ -46,7 +46,7 @@ interface TabProps {
 }
 
 
-export const Header = ({bgDark, bgLight} : {bgDark: string, bgLight: string}) => {
+export const Header = ({ bgDark, bgLight } : { bgDark: string, bgLight: string }) => {
     const { spanish, setSpanish } = useLenguage()
     const { isMobile } = useMobileView()
     const [isOpen, setIsOpen] = useState<boolean>(false)
