@@ -7,10 +7,12 @@ import { useMobileView } from "@/app/context/MobileViewContext"
 import dektopRIETest from '@/app/img/projects/desktopRIE2.png'
 import desktopBuffaloTest from '@/app/img/projects/desktopBuffalo2.png'
 import desktopPinascoTest from '@/app/img/projects/desktopPinasco2.png'
+import desktopNG from '@/app/img/projects/desktopNG.png'
 
 import mobileBuffalo from '@/app/img/projects/mobileBuffalo.png'
 import mobilePinasco from '@/app/img/projects/mobilePinasco.png'
 import mobileRIE from '@/app/img/projects/mobileRIE.png'
+import mobileNG from '@/app/img/projects/mobileNG.png'
 
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -84,18 +86,6 @@ export const Projects = () => {
 const info = [
     {
         id: 1,
-        titleSpanish: 'Red Integral Educativa',
-        titleEnglish: 'Integral Educational Network',
-        descriptionSpanish: 'Desarrollo de una plataforma web institucional diseñada para escuelas, jardines y centros educativos de cualquier nivel. RIE permite a las instituciones contar con una imagen web profesional, sistema de asistencias automatizado, y un registro organizado de mensajes entre la comunidad educativa.',
-        descriptionEnglish: 'Development of an institutional web platform designed for schools, kindergartens, and educational centers of all levels. RIE provides institutions with a professional web presence, an automated attendance system, and an organized messaging log to enhance communication within the educational community.',
-        desafioSpanish: 'El desafío fue crear un sistema centralizado y escalable que permitiera a cada institución gestionar su identidad digital, mantener un control eficiente de asistencias, y facilitar la comunicación interna. También se trabajó en un panel administrativo dinámico y adaptable.',
-        desafioEnglish: 'The challenge was to create a centralized and scalable system that would allow each institution to manage its digital identity, efficiently track attendance, and facilitate internal communication. A dynamic and adaptable admin dashboard was also developed as part of the platform.',
-        desktop: dektopRIETest,
-        mobile: mobileRIE,
-        url: 'https://www.somosrie.com'
-    },
-    {
-        id: 2,
         titleSpanish: 'E-commerce de venta de instrumentos musicales',
         titleEnglish: 'E-commerce for musical instruments',
         descriptionSpanish: 'Desarrollo de una tienda online para la venta de instrumentos musicales. El proyecto incluye una sección de productos, un carrito de compras, autentificacion, roles de usuario y compras.',
@@ -107,7 +97,31 @@ const info = [
         url: 'https://www.sbmusic.ar'
     },
     {
+        id: 2,
+        titleSpanish: 'Web corporativa para empresa de fumigacion',
+        titleEnglish: 'Corporate website for a pest control company',
+        descriptionSpanish: 'Desarrollo de una plataforma web corporativa diseñada para una empresa de fumigacion. El proyecto incluye una sección de servicios, un formulario de contacto, una galería de imágenes y una sección de contacto.',
+        descriptionEnglish: 'Development of a corporate website designed for a pest control company. The project includes a services section, a contact form, an image gallery, and a contact section.',
+        desafioSpanish: 'El desafío fue crear un sistema centralizado y escalable que permitiera a cada institución gestionar su identidad digital, mantener un control eficiente de asistencias, y facilitar la comunicación interna. También se trabajó en un panel administrativo dinámico y adaptable.',
+        desafioEnglish: 'The challenge was to create a centralized and scalable system that would allow each institution to manage its digital identity, efficiently track attendance, and facilitate internal communication. A dynamic and adaptable admin dashboard was also developed as part of the platform.',
+        desktop: desktopNG,
+        mobile: mobileNG,
+        url: 'https://ngdesinfecciones.com.ar/web/'
+    },
+    {
         id: 3,
+        titleSpanish: 'Red Integral Educativa',
+        titleEnglish: 'Integral Educational Network',
+        descriptionSpanish: 'Desarrollo de una plataforma web institucional diseñada para escuelas, jardines y centros educativos de cualquier nivel. RIE permite a las instituciones contar con una imagen web profesional, sistema de asistencias automatizado, y un registro organizado de mensajes entre la comunidad educativa.',
+        descriptionEnglish: 'Development of an institutional web platform designed for schools, kindergartens, and educational centers of all levels. RIE provides institutions with a professional web presence, an automated attendance system, and an organized messaging log to enhance communication within the educational community.',
+        desafioSpanish: 'El desafío fue crear un sistema centralizado y escalable que permitiera a cada institución gestionar su identidad digital, mantener un control eficiente de asistencias, y facilitar la comunicación interna. También se trabajó en un panel administrativo dinámico y adaptable.',
+        desafioEnglish: 'The challenge was to create a centralized and scalable system that would allow each institution to manage its digital identity, efficiently track attendance, and facilitate internal communication. A dynamic and adaptable admin dashboard was also developed as part of the platform.',
+        desktop: dektopRIETest,
+        mobile: mobileRIE,
+        url: 'https://www.somosrie.com'
+    },
+    {
+        id: 4,
         titleSpanish: 'Consultorio Odontológico',
         titleEnglish: 'Dental Clinic Website',
         descriptionSpanish: 'Diseño de una página web para una clínica odontológica. El proyecto incluye un formulario de contacto, una galería de imágenes y una sección de servicios.',

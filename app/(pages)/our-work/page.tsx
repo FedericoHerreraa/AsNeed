@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { OurWork } from "@/app/components/OurWork";
+import { OurWork } from "./OurWork";
 import { LineSeparator } from "@/app/components/LineSeparator";
 import { UsersOpinions } from "@/app/components/UsersOpinions";
 import { CustomSeparator } from "@/app/components/CustomSeparator";

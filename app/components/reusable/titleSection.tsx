@@ -29,6 +29,29 @@ export const TitleSection = ({
                 viewport={{ once: true }}
         >
             <div>
+                <div className="flex justify-center gap-2 mb-4">
+                    <motion.div 
+                        className="w-6 h-2 bg-blue-500 rounded-full"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        viewport={{ once: true }}
+                    ></motion.div>
+                    <motion.div 
+                        className="w-3 h-2 bg-violet-500 rounded-full"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        viewport={{ once: true }}
+                    ></motion.div>
+                    <motion.div 
+                        className="w-4 h-2 bg-blue-500 rounded-full"
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        viewport={{ once: true }}
+                    ></motion.div>
+                </div>
                 <p className="text-zinc-500 text-center mb-3 md:text-xl ">
                     {spanish
                         ? subTitleSpanish

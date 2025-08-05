@@ -10,7 +10,7 @@ export const OurWork = () => {
 
   return (
     <div
-      className='dark:bg-black dark:text-zinc-300 min-h-[150vh] md:pt-20 pt-10'
+      className='dark:bg-black dark:text-zinc-300 min-h-[150vh] pt-40 '
     >
       <TitleSection
         firstTitleEnglish="Look At Our"

@@ -4,14 +4,14 @@
 import { useLenguage } from "@/app/context/LenguageContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { ContactUsController } from "./ContactUsController";
+import { ContactUsController } from "../../components/ContactUsController";
 
 export const StartNow = () => {
     const { spanish } = useLenguage()
 
     return (
         <div 
-            className='dark:bg-black min-h-[100vh] md:pt-20 pt-10'
+            className='dark:bg-black min-h-[100vh] pt-40'
         >
                 <TitleSection
                     firstTitleEnglish="Let's Start"
@@ -24,7 +24,7 @@ export const StartNow = () => {
                     spanish={spanish}
                 />
 
-                <section className="flex md:flex-row flex-col md:w-[95%] w-[99%] mx-auto mt-20 gap-7">
+                <section className="flex md:flex-row flex-col md:w-[95  %] w-[99%] mx-auto mt-20 gap-7">
                     <div className='md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg dark:text-zinc-300'>
                         <h2 className='md:text-3xl text-xl dark:text-zinc-200 text-zinc-800 font-semibold'>
                             {spanish ? 'Coordiná una llamada' : 'Schedule a call'}

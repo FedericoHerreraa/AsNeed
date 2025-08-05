@@ -8,7 +8,7 @@ import { useLenguage } from "@/app/context/LenguageContext"
 import { FaApple, FaRocket, FaBuilding, FaShoppingCart } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
-import { useMobileView } from "../context/MobileViewContext"
+import { useMobileView } from "../../context/MobileViewContext"
 
 import {
     Accordion,
@@ -23,7 +23,7 @@ export const PlansComponent = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className='dark:bg-black dark:text-zinc-300 text-zinc-700 min-h-[100vh] md:pt-20 pt-10'>
+        <div className='dark:bg-black dark:text-zinc-300 text-zinc-700 min-h-[100vh] pt-40'>
             <TitleSection
                 firstTitleEnglish="Our"
                 secondTitleEnglish="Plans"

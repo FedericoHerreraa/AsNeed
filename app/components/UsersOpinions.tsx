@@ -4,7 +4,7 @@
 import { useLenguage } from "@/app/context/LenguageContext"
 import { TitleSection } from "@/app/components/reusable/titleSection"
 
-import Autoplay from "embla-carousel-autoplay"
+// import Autoplay from "embla-carousel-autoplay"
 
 import Image from "next/image"
 
@@ -13,13 +13,13 @@ import buffaloLogo from '@/app/img/logos/buffalo.png'
 import pinascoLogo from '@/app/img/logos/pinasco-only-logo.png'
 import nonnomingoLogo from '@/app/img/logos/nonnomingo-logo.jpg'
 
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/app/components/ui/carousel"  
+// import {
+//     Carousel,
+//     CarouselContent,
+//     CarouselItem,
+//     CarouselNext,
+//     CarouselPrevious,
+// } from "@/app/components/ui/carousel"  
 
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { RiDoubleQuotesR } from "react-icons/ri";
@@ -40,9 +40,9 @@ export const UsersOpinions = () => {
                 spanish={spanish}
             />
             
-            {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-20 md:w-[75%] w-[70%] mx-auto bg-gradient-to-br from-black via-zinc-900/80 to-black rounded-full">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-20 md:w-[75%] w-[70%] mx-auto bg-gradient-to-br dark:from-black dark:via-zinc-900/80 dark:to-black rounded-full">
                 {testimonials.map((testi, idx) => (
-                    <div key={idx} className="bg-black text-zinc-200 border border-zinc-800 shadow rounded-2xl p-6 flex flex-col gap-4 max-w-sm">
+                    <div key={idx} className="dark:bg-black bg-zinc-100 text-zinc-200 border dark:border-zinc-800 border-zinc-200 shadow rounded-2xl p-6 flex flex-col gap-4 max-w-sm">
                         <div className="flex items-center gap-4">
                             <Image
                                 src={testi.img}
@@ -52,15 +52,19 @@ export const UsersOpinions = () => {
                                 className="rounded-full"
                             />
                             <div>
-                                <p className="font-semibold text-zinc-200">{testi.name.es}</p>
+                                <p className="font-semibold dark:text-zinc-200 text-zinc-800">{testi.name.es}</p>
                                 <p className="text-sm text-gray-500 dark:text-gray-400">{testi.work?.es}</p>
                             </div>
                         </div>
-                        <p className="text-zinc-300 text-sm">{testi.review.es}</p>
+                        <p className="dark:text-zinc-300 text-zinc-800 text-sm">
+                            <RiDoubleQuotesL size={20} className="inline mr-1" />
+                            {testi.review.es}
+                            <RiDoubleQuotesR size={20} className="inline ml-1" />
+                        </p>
                     </div>
                 ))}
-            </div> */}
-            <section className="mt-20 md:w-[80%] w-[70%] mx-auto">
+            </div>
+            {/* <section className="mt-20 md:w-[80%] w-[70%] mx-auto">
                 <Carousel 
                     opts={{
                         loop: true
@@ -107,7 +111,7 @@ export const UsersOpinions = () => {
                     <CarouselPrevious className='dark:bg-black dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900 hover:text-white bg-zinc-200 border-zinc-200 hover:bg-zinc-600'/>
                     <CarouselNext className='dark:bg-black dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-900 hover:text-white bg-zinc-200 border-zinc-200 hover:bg-zinc-600'/>
                 </Carousel>
-            </section>
+            </section> */}
         </div>
     )
 }

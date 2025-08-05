@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { StartNow } from "@/app/components/StartNow";
+import { StartNow } from "./StartNow";
 import { LineSeparator } from "@/app/components/LineSeparator";
 import { FAQs } from "@/app/components/FAQs";
 import {Header} from "@/app/components/Header"

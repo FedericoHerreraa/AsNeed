@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { PlansComponent } from "@/app/components/Plans";
+import { PlansComponent } from "./Plans";
 import { CustomSeparator } from "@/app/components/CustomSeparator";
 import { FAQs } from "@/app/components/FAQs";
 import { UsersOpinions } from "@/app/components/UsersOpinions";

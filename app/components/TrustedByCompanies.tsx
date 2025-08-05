@@ -29,8 +29,8 @@ export const TrustedByCompanies = () => {
                 spanish={spanish}
             />
 
-            <section className='w-full dark:bg-[#101011] bg-zinc-800 mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap'>
-                <Marquee speed={100}>
+            <section className='w-full dark:bg-[#101011] bg-zinc-800 mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap relative'>
+                <Marquee>
                     {companies.map((company, index) => (
                         <Image
                             key={index}

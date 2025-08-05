@@ -20,10 +20,10 @@ export const LandingInfo = () => {
     useEffect(() => {
         const typed = new Typed(typedRef.current, {
             strings: [
-                spanish ? "Digital" : "Business", 
-                spanish ? "Hoy" : "Startup", 
-                spanish ? "Online" : "Brand",
-                spanish ? "Con IA" : "IA Business",
+                spanish ? "Digital" : "Growth", 
+                spanish ? "Moderno" : "Success", 
+                spanish ? "Con IA" : "Transformation",
+                spanish ? "Tech" : "Innovation",
             ], 
             typeSpeed: 100,  
             backSpeed: 50,  
@@ -48,27 +48,27 @@ export const LandingInfo = () => {
             <div className='absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent dark:to-black z-10 to-white' />
             
             <div className="absolute top-0 left-0 w-full z-30">
-                <Header bgDark="transparent" bgLight="transparent" />
+                <Header bgDark="bg-black" bgLight="bg-white" />
             </div>
             <div className="relative z-20 mx-auto flex justify-center gap-10 h-full items-center">
                 <div className="flex flex-col md:gap-10 gap-7 md:w-1/2 items-center mt-20">
-                    <h1 className='md:text-7xl text-4xl text-center font-semibold dark:text-white text-black'>
-                        {spanish ? 'Mejorá tu' : 'Improve Your'}{' '}
+                    <h1 className='md:text-6xl text-4xl text-center font-semibold dark:text-white text-black'>
+                        {spanish ? 'Soluciones tecnológicas' : 'Technology solutions'}{' '}
                         <span className="bg-gradient-to-r dark:from-blue-600 dark:to-violet-600 from-blue-500 to-violet-500 bg-clip-text text-transparent">
-                            {spanish ? 'Negocio' : 'Digital'}{' '}
+                            {spanish ? 'a medida para tu empresa' : 'for your business'}{' '}
                         </span>
                         <br /> 
                         <span ref={typedRef} className="text-center bg-gradient-to-r dark:from-violet-500 dark:to-violet-800 from-blue-500 to-violet-600 bg-clip-text text-transparent"></span>
                     </h1>
                     <p className="md:text-xl text-md text-center dark:text-zinc-300 text-zinc-700">
                         {spanish 
-                            ? 'En "AsNeed", transformamos tus ideas en realidad digital. Diseñamos y desarrollamos sistemas de gestión, aplicaciones móviles y plataformas web con IA, completamente personalizadas para cubrir las necesidades de tu negocio.'
-                            : 'At "AsNeed", we turn your ideas into digital reality. We design and develop management systems, mobile applications and web platforms with AI, fully customized to meet your business needs.'
+                            ? 'Sistemas de gestión, apps móviles y plataformas web con IA para tu negocio.'
+                            : 'Management systems, mobile apps and AI-powered web platforms for your business.'
                         }
                     </p>
                     <div className="flex items-center gap-3">
                         <FaHandshake size={25} className="dark:text-white text-zinc-700"/>
-                        <p className="md:text-lg text-md md:text-left text-center dark:text-zinc-200 text-zinc-700">
+                        <p className="md:text-lg text-md md:text-left text-center dark:text-zinc-200 text-zinc-700 font-bold">
                             {spanish ? '' : 'Trusted by '}<span className="font-bold">20+</span> {spanish ? 'compañías confían en nosotros' : 'companies'}
                         </p>
                     </div>

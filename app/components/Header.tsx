@@ -52,9 +52,20 @@ export const Header = ({ bgDark, bgLight } : { bgDark: string, bgLight: string }
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const { theme, setTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
         setMounted(true)
+    }, [])
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY
+            setIsScrolled(scrollTop > 10) 
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
     if (!mounted) {
@@ -62,8 +73,8 @@ export const Header = ({ bgDark, bgLight } : { bgDark: string, bgLight: string }
     }
 
     return (
-        <header className={`dark:text-zinc-300  ${theme === 'dark' ? bgDark : bgLight } `}>
-            <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-8 ">
+        <header className={`dark:text-zinc-300 fixed top-0 left-0 w-full z-[999] ${theme === 'dark' ? bgDark : bgLight } ${isScrolled ? 'border-b dark:border-zinc-700 border-zinc-300' : ''} transition-all duration-300`}>
+            <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-4 ">
                 <Link href='/' className="flex items-center gap-1">
                     <Image 
                         src={theme === 'dark' ? logoDark : logoLight} 

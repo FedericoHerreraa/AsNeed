@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { OurWay } from "@/app/components/OurWay";
 import { LandingInfo } from "@/app/components/Landing"
-import { CustomSeparator } from "@/app/components/CustomSeparator";
+// import { CustomSeparator } from "@/app/components/CustomSeparator";
 import { Founders } from "@/app/components/Founders";
 import { LineSeparator } from '@/app/components/LineSeparator';
 import { TrustedByCompanies } from "@/app/components/TrustedByCompanies";
@@ -38,17 +38,20 @@ export default function HomePage() {
     return (
         <>
             <LandingInfo />
-            <CustomSeparator />
+            {/* <CustomSeparator /> */}
+            <LineSeparator />
             <OurWay />
             <LineSeparator />
             <WhyUs />
             <LineSeparator />
             <OurResults />
-            <CustomSeparator />
+            {/* <CustomSeparator /> */}
+            <LineSeparator />
             <TrustedByCompanies />
             <LineSeparator />
             <UsersOpinions />
-            <CustomSeparator />
+            {/* <CustomSeparator /> */}
+            <LineSeparator />
             <Founders /> 
             <LineSeparator />
             <FAQs />
